@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Collection</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .filter-section { margin: 20px; }
+        .card-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .card { display: flex; flex-direction: column; align-items: center; }
+        .card img { width: auto; max-height: calc((100vh - 150px) / 3); max-width: 313px; }
+    </style>
+</head>
+<body>
+    <div class="filter-section">
+        <label for="set">Select Set:</label>
+        <select id="set" onchange="changeSet()">
+            <option value="OP01" >OP01</option><option value="OP02" selected>OP02</option><option value="OP03" >OP03</option><option value="OP04" >OP04</option><option value="OP05" >OP05</option>
+        </select>
+        <label for="rarity">Filter by Rarity:</label>
+        <select id="rarity" onchange="filterCards()">
+            <option value="all">All</option>
+            <option value="Common">Common</option>
+            <option value="Uncommon">Uncommon</option>
+            <option value="Rare">Rare</option>
+            <option value="Secret Rare">Secret Rare</option>
+            <option value="Super Rare">Super Rare</option>
+            <option value="Leader">Leader</option>
+            <option value="DON!!">DON!!</option>
+        </select>
+        <label for="minPrice">Minimum Price:</label>
+        <input type="number" id="minPrice" step="0.01" onchange="filterCards()">
+    </div>
+    <div class="card-grid" id="cardGrid">
+        
+        <div class="card" data-rarity="Uncommon" data-price="0.48">
+            <img src="images/OP02/arabesque_brick_fist.jpg" alt="Arabesque Brick Fist">
+            <div>Arabesque Brick Fist</div>
+            <div>$0.48</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.08">
+            <img src="images/OP02/atmos.jpg" alt="Atmos">
+            <div>Atmos</div>
+            <div>$0.08</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.12">
+            <img src="images/OP02/bartholomew_kuma.jpg" alt="Bartholomew Kuma">
+            <div>Bartholomew Kuma</div>
+            <div>$0.12</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.14">
+            <img src="images/OP02/bell_mere.jpg" alt="Bell-mere">
+            <div>Bell-mere</div>
+            <div>$0.14</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.07">
+            <img src="images/OP02/blenheim.jpg" alt="Blenheim">
+            <div>Blenheim</div>
+            <div>$0.07</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/blugori.jpg" alt="Blugori">
+            <div>Blugori</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.16">
+            <img src="images/OP02/boa_hancock.jpg" alt="Boa Hancock">
+            <div>Boa Hancock</div>
+            <div>$0.16</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="6.54">
+            <img src="images/OP02/boa_hancock__box_topper_.jpg" alt="Boa Hancock (Box Topper)">
+            <div>Boa Hancock (Box Topper)</div>
+            <div>$6.54</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="32.2">
+            <img src="images/OP02/borsalino.jpg" alt="Borsalino">
+            <div>Borsalino</div>
+            <div>$32.20</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="84.6">
+            <img src="images/OP02/borsalino__alternate_art_.jpg" alt="Borsalino (Alternate Art)">
+            <div>Borsalino (Alternate Art)</div>
+            <div>$84.60</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.13">
+            <img src="images/OP02/brook.jpg" alt="Brook">
+            <div>Brook</div>
+            <div>$0.13</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="1.21">
+            <img src="images/OP02/buggy.jpg" alt="Buggy">
+            <div>Buggy</div>
+            <div>$1.21</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="23.64">
+            <img src="images/OP02/buggy__alternate_art_.jpg" alt="Buggy (Alternate Art)">
+            <div>Buggy (Alternate Art)</div>
+            <div>$23.64</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.1">
+            <img src="images/OP02/byrnndi_world.jpg" alt="Byrnndi World">
+            <div>Byrnndi World</div>
+            <div>$0.10</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.1">
+            <img src="images/OP02/cabaji.jpg" alt="Cabaji">
+            <div>Cabaji</div>
+            <div>$0.10</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.32">
+            <img src="images/OP02/carrot.jpg" alt="Carrot">
+            <div>Carrot</div>
+            <div>$0.32</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.11">
+            <img src="images/OP02/crocodile.jpg" alt="Crocodile">
+            <div>Crocodile</div>
+            <div>$0.11</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.74">
+            <img src="images/OP02/curly_dadan.jpg" alt="Curly.Dadan">
+            <div>Curly.Dadan</div>
+            <div>$0.74</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.2">
+            <img src="images/OP02/death_wink.jpg" alt="DEATH WINK">
+            <div>DEATH WINK</div>
+            <div>$0.20</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="DON!!" data-price="2.15">
+            <img src="images/OP02/don___card__op_02_exclusive_.jpg" alt="DON!! Card (OP-02 Exclusive)">
+            <div>DON!! Card (OP-02 Exclusive)</div>
+            <div>$2.15</div>
+            <div>DON!!</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.1">
+            <img src="images/OP02/daifugo.jpg" alt="Daifugo">
+            <div>Daifugo</div>
+            <div>$0.10</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.12">
+            <img src="images/OP02/diable_jambe_venaison_shoot.jpg" alt="Diable Jambe Venaison Shoot">
+            <div>Diable Jambe Venaison Shoot</div>
+            <div>$0.12</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.03">
+            <img src="images/OP02/doberman.jpg" alt="Doberman">
+            <div>Doberman</div>
+            <div>$0.03</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.04">
+            <img src="images/OP02/dobon.jpg" alt="Dobon">
+            <div>Dobon</div>
+            <div>$0.04</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/dogura.jpg" alt="Dogura">
+            <div>Dogura</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.1">
+            <img src="images/OP02/domino.jpg" alt="Domino">
+            <div>Domino</div>
+            <div>$0.10</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.14">
+            <img src="images/OP02/donquixote_doflamingo.jpg" alt="Donquixote Doflamingo">
+            <div>Donquixote Doflamingo</div>
+            <div>$0.14</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/donquixote_rosinante.jpg" alt="Donquixote Rosinante">
+            <div>Donquixote Rosinante</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="2.03">
+            <img src="images/OP02/donquixote_rosinante__box_topper_.jpg" alt="Donquixote Rosinante (Box Topper)">
+            <div>Donquixote Rosinante (Box Topper)</div>
+            <div>$2.03</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.12">
+            <img src="images/OP02/douglas_bullet.jpg" alt="Douglas Bullet">
+            <div>Douglas Bullet</div>
+            <div>$0.12</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.16">
+            <img src="images/OP02/dracule_mihawk.jpg" alt="Dracule Mihawk">
+            <div>Dracule Mihawk</div>
+            <div>$0.16</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.33">
+            <img src="images/OP02/edward_newgate__001_.jpg" alt="Edward.Newgate (001)">
+            <div>Edward.Newgate (001)</div>
+            <div>$0.33</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="125.28">
+            <img src="images/OP02/edward_newgate__001___alternate_art_.jpg" alt="Edward.Newgate (001) (Alternate Art)">
+            <div>Edward.Newgate (001) (Alternate Art)</div>
+            <div>$125.28</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="18.13">
+            <img src="images/OP02/edward_newgate__004_.jpg" alt="Edward.Newgate (004)">
+            <div>Edward.Newgate (004)</div>
+            <div>$18.13</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="51.75">
+            <img src="images/OP02/edward_newgate__004___alternate_art_.jpg" alt="Edward.Newgate (004) (Alternate Art)">
+            <div>Edward.Newgate (004) (Alternate Art)</div>
+            <div>$51.75</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.2">
+            <img src="images/OP02/emporio_ivankov__049_.jpg" alt="Emporio.Ivankov (049)">
+            <div>Emporio.Ivankov (049)</div>
+            <div>$0.20</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="62.97">
+            <img src="images/OP02/emporio_ivankov__049___alternate_art_.jpg" alt="Emporio.Ivankov (049) (Alternate Art)">
+            <div>Emporio.Ivankov (049) (Alternate Art)</div>
+            <div>$62.97</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="1.5">
+            <img src="images/OP02/emporio_ivankov__051_.jpg" alt="Emporio.Ivankov (051)">
+            <div>Emporio.Ivankov (051)</div>
+            <div>$1.50</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="15.14">
+            <img src="images/OP02/emporio_ivankov__051___alternate_art_.jpg" alt="Emporio.Ivankov (051) (Alternate Art)">
+            <div>Emporio.Ivankov (051) (Alternate Art)</div>
+            <div>$15.14</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.05">
+            <img src="images/OP02/franky.jpg" alt="Franky">
+            <div>Franky</div>
+            <div>$0.05</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.05">
+            <img src="images/OP02/fullbody.jpg" alt="Fullbody">
+            <div>Fullbody</div>
+            <div>$0.05</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/gecko_moria.jpg" alt="Gecko Moria">
+            <div>Gecko Moria</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="1.14">
+            <img src="images/OP02/gum_gum_rain.jpg" alt="Gum-Gum Rain">
+            <div>Gum-Gum Rain</div>
+            <div>$1.14</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.28">
+            <img src="images/OP02/hannyabal.jpg" alt="Hannyabal">
+            <div>Hannyabal</div>
+            <div>$0.28</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.11">
+            <img src="images/OP02/helmeppo.jpg" alt="Helmeppo">
+            <div>Helmeppo</div>
+            <div>$0.11</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.53">
+            <img src="images/OP02/hina.jpg" alt="Hina">
+            <div>Hina</div>
+            <div>$0.53</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.19">
+            <img src="images/OP02/hydra.jpg" alt="Hydra">
+            <div>Hydra</div>
+            <div>$0.19</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="1.65">
+            <img src="images/OP02/ice_age.jpg" alt="Ice Age">
+            <div>Ice Age</div>
+            <div>$1.65</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/impel_down.jpg" alt="Impel Down">
+            <div>Impel Down</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.16">
+            <img src="images/OP02/impel_down_all_stars.jpg" alt="Impel Down All Stars">
+            <div>Impel Down All Stars</div>
+            <div>$0.16</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.15">
+            <img src="images/OP02/inazuma.jpg" alt="Inazuma">
+            <div>Inazuma</div>
+            <div>$0.15</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.11">
+            <img src="images/OP02/inuarashi.jpg" alt="Inuarashi">
+            <div>Inuarashi</div>
+            <div>$0.11</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.14">
+            <img src="images/OP02/isuka.jpg" alt="Isuka">
+            <div>Isuka</div>
+            <div>$0.14</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.05">
+            <img src="images/OP02/jaguar_d_saul.jpg" alt="Jaguar.D.Saul">
+            <div>Jaguar.D.Saul</div>
+            <div>$0.05</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.07">
+            <img src="images/OP02/jango.jpg" alt="Jango">
+            <div>Jango</div>
+            <div>$0.07</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.07">
+            <img src="images/OP02/jinbe.jpg" alt="Jinbe">
+            <div>Jinbe</div>
+            <div>$0.07</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="3.76">
+            <img src="images/OP02/jozu.jpg" alt="Jozu">
+            <div>Jozu</div>
+            <div>$3.76</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.8">
+            <img src="images/OP02/judgment_of_hell.jpg" alt="Judgment of Hell">
+            <div>Judgment of Hell</div>
+            <div>$0.80</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.14">
+            <img src="images/OP02/kin_emon.jpg" alt="Kin'emon">
+            <div>Kin'emon</div>
+            <div>$0.14</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="48.55">
+            <img src="images/OP02/kin_emon__alternate_art_.jpg" alt="Kin'emon (Alternate Art)">
+            <div>Kin'emon (Alternate Art)</div>
+            <div>$48.55</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/kingdew.jpg" alt="Kingdew">
+            <div>Kingdew</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.33">
+            <img src="images/OP02/koby.jpg" alt="Koby">
+            <div>Koby</div>
+            <div>$0.33</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.04">
+            <img src="images/OP02/komille.jpg" alt="Komille">
+            <div>Komille</div>
+            <div>$0.04</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="3.86">
+            <img src="images/OP02/kouzuki_oden.jpg" alt="Kouzuki Oden">
+            <div>Kouzuki Oden</div>
+            <div>$3.86</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="25.13">
+            <img src="images/OP02/kouzuki_oden__alternate_art_.jpg" alt="Kouzuki Oden (Alternate Art)">
+            <div>Kouzuki Oden (Alternate Art)</div>
+            <div>$25.13</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.13">
+            <img src="images/OP02/kouzuki_toki.jpg" alt="Kouzuki Toki">
+            <div>Kouzuki Toki</div>
+            <div>$0.13</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="3.49">
+            <img src="images/OP02/kouzuki_toki__box_topper_.jpg" alt="Kouzuki Toki (Box Topper)">
+            <div>Kouzuki Toki (Box Topper)</div>
+            <div>$3.49</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="16.29">
+            <img src="images/OP02/kuzan__096_.jpg" alt="Kuzan (096)">
+            <div>Kuzan (096)</div>
+            <div>$16.29</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="68.34">
+            <img src="images/OP02/kuzan__096___alternate_art_.jpg" alt="Kuzan (096) (Alternate Art)">
+            <div>Kuzan (096) (Alternate Art)</div>
+            <div>$68.34</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Secret Rare" data-price="17.86">
+            <img src="images/OP02/kuzan__121_.jpg" alt="Kuzan (121)">
+            <div>Kuzan (121)</div>
+            <div>$17.86</div>
+            <div>Secret Rare</div>
+        </div>
+        <div class="card" data-rarity="Secret Rare" data-price="36.74">
+            <img src="images/OP02/kuzan__121___alternate_art_.jpg" alt="Kuzan (121) (Alternate Art)">
+            <div>Kuzan (121) (Alternate Art)</div>
+            <div>$36.74</div>
+            <div>Secret Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.08">
+            <img src="images/OP02/land_of_wano.jpg" alt="Land of Wano">
+            <div>Land of Wano</div>
+            <div>$0.08</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.32">
+            <img src="images/OP02/little_sadi.jpg" alt="Little Sadi">
+            <div>Little Sadi</div>
+            <div>$0.32</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="14.94">
+            <img src="images/OP02/little_sadi__alternate_art_.jpg" alt="Little Sadi (Alternate Art)">
+            <div>Little Sadi (Alternate Art)</div>
+            <div>$14.94</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.07">
+            <img src="images/OP02/littleoars_jr_.jpg" alt="LittleOars Jr.">
+            <div>LittleOars Jr.</div>
+            <div>$0.07</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.23">
+            <img src="images/OP02/magellan__071_.jpg" alt="Magellan (071)">
+            <div>Magellan (071)</div>
+            <div>$0.23</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="46.64">
+            <img src="images/OP02/magellan__071___alternate_art_.jpg" alt="Magellan (071) (Alternate Art)">
+            <div>Magellan (071) (Alternate Art)</div>
+            <div>$46.64</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="4.95">
+            <img src="images/OP02/magellan__085_.jpg" alt="Magellan (085)">
+            <div>Magellan (085)</div>
+            <div>$4.95</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="19.74">
+            <img src="images/OP02/magellan__085___alternate_art_.jpg" alt="Magellan (085) (Alternate Art)">
+            <div>Magellan (085) (Alternate Art)</div>
+            <div>$19.74</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.14">
+            <img src="images/OP02/magura.jpg" alt="Magura">
+            <div>Magura</div>
+            <div>$0.14</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="1.05">
+            <img src="images/OP02/makino.jpg" alt="Makino">
+            <div>Makino</div>
+            <div>$1.05</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="1.33">
+            <img src="images/OP02/marco.jpg" alt="Marco">
+            <div>Marco</div>
+            <div>$1.33</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="37.26">
+            <img src="images/OP02/marco__alternate_art_.jpg" alt="Marco (Alternate Art)">
+            <div>Marco (Alternate Art)</div>
+            <div>$37.26</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.17">
+            <img src="images/OP02/masked_deuce.jpg" alt="Masked Deuce">
+            <div>Masked Deuce</div>
+            <div>$0.17</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="4.23">
+            <img src="images/OP02/masked_deuce__alternate_art_.jpg" alt="Masked Deuce (Alternate Art)">
+            <div>Masked Deuce (Alternate Art)</div>
+            <div>$4.23</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.24">
+            <img src="images/OP02/meteor_volcano.jpg" alt="Meteor Volcano">
+            <div>Meteor Volcano</div>
+            <div>$0.24</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.18">
+            <img src="images/OP02/minokoala.jpg" alt="Minokoala">
+            <div>Minokoala</div>
+            <div>$0.18</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="2.51">
+            <img src="images/OP02/minokoala__box_topper_.jpg" alt="Minokoala (Box Topper)">
+            <div>Minokoala (Box Topper)</div>
+            <div>$2.51</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.15">
+            <img src="images/OP02/minotaur.jpg" alt="Minotaur">
+            <div>Minotaur</div>
+            <div>$0.15</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.16">
+            <img src="images/OP02/moby_dick.jpg" alt="Moby Dick">
+            <div>Moby Dick</div>
+            <div>$0.16</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.06">
+            <img src="images/OP02/mohji.jpg" alt="Mohji">
+            <div>Mohji</div>
+            <div>$0.06</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.19">
+            <img src="images/OP02/monkey_d_garp__002_.jpg" alt="Monkey.D.Garp (002)">
+            <div>Monkey.D.Garp (002)</div>
+            <div>$0.19</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="59.59">
+            <img src="images/OP02/monkey_d_garp__002___alternate_art_.jpg" alt="Monkey.D.Garp (002) (Alternate Art)">
+            <div>Monkey.D.Garp (002) (Alternate Art)</div>
+            <div>$59.59</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.26">
+            <img src="images/OP02/monkey_d_garp__115_.jpg" alt="Monkey.D.Garp (115)">
+            <div>Monkey.D.Garp (115)</div>
+            <div>$0.26</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="10.95">
+            <img src="images/OP02/monkey_d_garp__115___alternate_art_.jpg" alt="Monkey.D.Garp (115) (Alternate Art)">
+            <div>Monkey.D.Garp (115) (Alternate Art)</div>
+            <div>$10.95</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.12">
+            <img src="images/OP02/monkey_d_luffy__041_.jpg" alt="Monkey.D.Luffy (041)">
+            <div>Monkey.D.Luffy (041)</div>
+            <div>$0.12</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="56.29">
+            <img src="images/OP02/monkey_d_luffy__041___alternate_art_.jpg" alt="Monkey.D.Luffy (041) (Alternate Art)">
+            <div>Monkey.D.Luffy (041) (Alternate Art)</div>
+            <div>$56.29</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="2.56">
+            <img src="images/OP02/monkey_d_luffy__062_.jpg" alt="Monkey.D.Luffy (062)">
+            <div>Monkey.D.Luffy (062)</div>
+            <div>$2.56</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="21.42">
+            <img src="images/OP02/monkey_d_luffy__062___alternate_art_.jpg" alt="Monkey.D.Luffy (062) (Alternate Art)">
+            <div>Monkey.D.Luffy (062) (Alternate Art)</div>
+            <div>$21.42</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.1">
+            <img src="images/OP02/morley.jpg" alt="Morley">
+            <div>Morley</div>
+            <div>$0.10</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.57">
+            <img src="images/OP02/mr_1__daz_bonez_.jpg" alt="Mr.1 (Daz.Bonez)">
+            <div>Mr.1 (Daz.Bonez)</div>
+            <div>$0.57</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.21">
+            <img src="images/OP02/mr_2_bon_kurei__bentham_.jpg" alt="Mr.2.Bon.Kurei (Bentham)">
+            <div>Mr.2.Bon.Kurei (Bentham)</div>
+            <div>$0.21</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.18">
+            <img src="images/OP02/mr_3__galdino_.jpg" alt="Mr.3 (Galdino)">
+            <div>Mr.3 (Galdino)</div>
+            <div>$0.18</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="15.55">
+            <img src="images/OP02/nami.jpg" alt="Nami">
+            <div>Nami</div>
+            <div>$15.55</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="39.65">
+            <img src="images/OP02/nami__alternate_art_.jpg" alt="Nami (Alternate Art)">
+            <div>Nami (Alternate Art)</div>
+            <div>$39.65</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.12">
+            <img src="images/OP02/nekomamushi.jpg" alt="Nekomamushi">
+            <div>Nekomamushi</div>
+            <div>$0.12</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.1">
+            <img src="images/OP02/new_kama_land.jpg" alt="New Kama Land">
+            <div>New Kama Land</div>
+            <div>$0.10</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.11">
+            <img src="images/OP02/nico_robin.jpg" alt="Nico Robin">
+            <div>Nico Robin</div>
+            <div>$0.11</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.09">
+            <img src="images/OP02/onigumo.jpg" alt="Onigumo">
+            <div>Onigumo</div>
+            <div>$0.09</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.21">
+            <img src="images/OP02/paradise_totsuka.jpg" alt="Paradise Totsuka">
+            <div>Paradise Totsuka</div>
+            <div>$0.21</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="13.35">
+            <img src="images/OP02/portgas_d_ace.jpg" alt="Portgas.D.Ace">
+            <div>Portgas.D.Ace</div>
+            <div>$13.35</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="76.25">
+            <img src="images/OP02/portgas_d_ace__parallel_.jpg" alt="Portgas.D.Ace (Parallel)">
+            <div>Portgas.D.Ace (Parallel)</div>
+            <div>$76.25</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="1">
+            <img src="images/OP02/portgas_d_ace__parallel___alternate_art_.jpg" alt="Portgas.D.Ace (Parallel) (Alternate Art)">
+            <div>Portgas.D.Ace (Parallel) (Alternate Art)</div>
+            <div>$1,119.83</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.15">
+            <img src="images/OP02/rakuyo.jpg" alt="Rakuyo">
+            <div>Rakuyo</div>
+            <div>$0.15</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.12">
+            <img src="images/OP02/roronoa_zoro.jpg" alt="Roronoa Zoro">
+            <div>Roronoa Zoro</div>
+            <div>$0.12</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="3.51">
+            <img src="images/OP02/sakazuki.jpg" alt="Sakazuki">
+            <div>Sakazuki</div>
+            <div>$3.51</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Super Rare" data-price="24.41">
+            <img src="images/OP02/sakazuki__alternate_art_.jpg" alt="Sakazuki (Alternate Art)">
+            <div>Sakazuki (Alternate Art)</div>
+            <div>$24.41</div>
+            <div>Super Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/saldeath.jpg" alt="Saldeath">
+            <div>Saldeath</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.26">
+            <img src="images/OP02/sanji.jpg" alt="Sanji">
+            <div>Sanji</div>
+            <div>$0.26</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="66.59">
+            <img src="images/OP02/sanji__alternate_art_.jpg" alt="Sanji (Alternate Art)">
+            <div>Sanji (Alternate Art)</div>
+            <div>$66.59</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.25">
+            <img src="images/OP02/seaquake.jpg" alt="Seaquake">
+            <div>Seaquake</div>
+            <div>$0.25</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.22">
+            <img src="images/OP02/sengoku.jpg" alt="Sengoku">
+            <div>Sengoku</div>
+            <div>$0.22</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.06">
+            <img src="images/OP02/sentomaru.jpg" alt="Sentomaru">
+            <div>Sentomaru</div>
+            <div>$0.06</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.31">
+            <img src="images/OP02/shiki.jpg" alt="Shiki">
+            <div>Shiki</div>
+            <div>$0.31</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.13">
+            <img src="images/OP02/shiryu.jpg" alt="Shiryu">
+            <div>Shiryu</div>
+            <div>$0.13</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.11">
+            <img src="images/OP02/shishilian.jpg" alt="Shishilian">
+            <div>Shishilian</div>
+            <div>$0.11</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.27">
+            <img src="images/OP02/smoker__093_.jpg" alt="Smoker (093)">
+            <div>Smoker (093)</div>
+            <div>$0.27</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="66.73">
+            <img src="images/OP02/smoker__093___alternate_art_.jpg" alt="Smoker (093) (Alternate Art)">
+            <div>Smoker (093) (Alternate Art)</div>
+            <div>$66.73</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.19">
+            <img src="images/OP02/smoker__102_.jpg" alt="Smoker (102)">
+            <div>Smoker (102)</div>
+            <div>$0.19</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/solitaire.jpg" alt="Solitaire">
+            <div>Solitaire</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/sphinx.jpg" alt="Sphinx">
+            <div>Sphinx</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.09">
+            <img src="images/OP02/squard.jpg" alt="Squard">
+            <div>Squard</div>
+            <div>$0.09</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="1.14">
+            <img src="images/OP02/squard__box_topper_.jpg" alt="Squard (Box Topper)">
+            <div>Squard (Box Topper)</div>
+            <div>$1.14</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.06">
+            <img src="images/OP02/strawberry.jpg" alt="Strawberry">
+            <div>Strawberry</div>
+            <div>$0.06</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.11">
+            <img src="images/OP02/tashigi.jpg" alt="Tashigi">
+            <div>Tashigi</div>
+            <div>$0.11</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="2.51">
+            <img src="images/OP02/tashigi__box_topper_.jpg" alt="Tashigi (Box Topper)">
+            <div>Tashigi (Box Topper)</div>
+            <div>$2.51</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.09">
+            <img src="images/OP02/thatch.jpg" alt="Thatch">
+            <div>Thatch</div>
+            <div>$0.09</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.08">
+            <img src="images/OP02/three_sword_style_oni_giri.jpg" alt="Three Sword Style Oni Giri">
+            <div>Three Sword Style Oni Giri</div>
+            <div>$0.08</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.12">
+            <img src="images/OP02/tony_tony_chopper.jpg" alt="Tony Tony.Chopper">
+            <div>Tony Tony.Chopper</div>
+            <div>$0.12</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.08">
+            <img src="images/OP02/trafalgar_law.jpg" alt="Trafalgar Law">
+            <div>Trafalgar Law</div>
+            <div>$0.08</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="2.65">
+            <img src="images/OP02/tsuru.jpg" alt="Tsuru">
+            <div>Tsuru</div>
+            <div>$2.65</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.07">
+            <img src="images/OP02/usopp.jpg" alt="Usopp">
+            <div>Usopp</div>
+            <div>$0.07</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Secret Rare" data-price="6.34">
+            <img src="images/OP02/uta.jpg" alt="Uta">
+            <div>Uta</div>
+            <div>$6.34</div>
+            <div>Secret Rare</div>
+        </div>
+        <div class="card" data-rarity="Secret Rare" data-price="18.2">
+            <img src="images/OP02/uta__alternate_art_.jpg" alt="Uta (Alternate Art)">
+            <div>Uta (Alternate Art)</div>
+            <div>$18.20</div>
+            <div>Secret Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.08">
+            <img src="images/OP02/venom_road.jpg" alt="Venom Road">
+            <div>Venom Road</div>
+            <div>$0.08</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="4.39">
+            <img src="images/OP02/vista.jpg" alt="Vista">
+            <div>Vista</div>
+            <div>$4.39</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.11">
+            <img src="images/OP02/wanda.jpg" alt="Wanda">
+            <div>Wanda</div>
+            <div>$0.11</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.21">
+            <img src="images/OP02/whitebeard_pirates.jpg" alt="Whitebeard Pirates">
+            <div>Whitebeard Pirates</div>
+            <div>$0.21</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Uncommon" data-price="0.13">
+            <img src="images/OP02/whitey_bay.jpg" alt="Whitey Bay">
+            <div>Whitey Bay</div>
+            <div>$0.13</div>
+            <div>Uncommon</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.05">
+            <img src="images/OP02/yamakaji.jpg" alt="Yamakaji">
+            <div>Yamakaji</div>
+            <div>$0.05</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Rare" data-price="0.8">
+            <img src="images/OP02/yamato.jpg" alt="Yamato">
+            <div>Yamato</div>
+            <div>$0.80</div>
+            <div>Rare</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.07">
+            <img src="images/OP02/yasakani_sacred_jewel.jpg" alt="Yasakani Sacred Jewel">
+            <div>Yasakani Sacred Jewel</div>
+            <div>$0.07</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Common" data-price="0.08">
+            <img src="images/OP02/you_may_be_a_fool___but_i_still_love_you.jpg" alt="You May Be a Fool...but I Still Love You">
+            <div>You May Be a Fool...but I Still Love You</div>
+            <div>$0.08</div>
+            <div>Common</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="0.21">
+            <img src="images/OP02/zephyr.jpg" alt="Zephyr">
+            <div>Zephyr</div>
+            <div>$0.21</div>
+            <div>Leader</div>
+        </div>
+        <div class="card" data-rarity="Leader" data-price="36.67">
+            <img src="images/OP02/zephyr__alternate_art_.jpg" alt="Zephyr (Alternate Art)">
+            <div>Zephyr (Alternate Art)</div>
+            <div>$36.67</div>
+            <div>Leader</div>
+        </div>
+    </div>
+    <script>
+        function changeSet() {
+            const set = document.getElementById('set').value;
+            window.location.href = set + '.html';
+        }
+
+        function filterCards() {
+            const rarity = document.getElementById('rarity').value;
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardRarity = card.getAttribute('data-rarity');
+                const cardPrice = parseFloat(card.getAttribute('data-price'));
+                const matchesRarity = rarity === 'all' || cardRarity === rarity;
+                const matchesPrice = cardPrice >= minPrice;
+                if (matchesRarity && matchesPrice) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        window.onload = filterCards;
+    </script>
+</body>
+</html>
+    

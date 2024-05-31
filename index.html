@@ -1,146 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Images</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: Arial, sans-serif;
-        }
-        .controls {
-            margin: 20px;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
-        .container img {
-            margin: 5px;
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            aspect-ratio: 313 / 437;
-        }
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
-    <script>
-        function filterCards() {
-            const rarity = document.getElementById('rarity-select').value;
-            const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
-            const containers = document.querySelectorAll('.container');
-            containers.forEach(container => {
-                if (rarity === 'All' || container.id === rarity) {
-                    const cards = container.querySelectorAll('img');
-                    let hasVisibleCards = false;
-                    cards.forEach(card => {
-                        const price = parseFloat(card.getAttribute('data-price').substring(1));
-                        if (price >= minPrice) {
-                            card.style.display = '';
-                            hasVisibleCards = true;
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                    if (hasVisibleCards) {
-                        container.classList.remove('hidden');
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>One Piece Card Game Price Guides</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .filter-section {
+                margin: 20px;
+            }
+            .card-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .card img {
+                width: auto;
+                max-height: calc((100vh - 150px) / 3);
+                max-width: 313px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="filter-section">
+            <label for="set">Select Set:</label>
+            <select id="set" onchange="changeSet()">
+                <option value="OP01" selected>Romance Dawn (OP01)</option>
+                <option value="OP02">Paramount War (OP02)</option>
+                <option value="OP03">Pillars of Strength (OP03)</option>
+                <option value="OP04">Kingdoms of Intrigue (OP04)</option>
+                <option value="OP05">Awakening of the New Era (OP05)</option>
+            </select>
+            <label for="rarity">Filter by Rarity:</label>
+            <select id="rarity" onchange="filterCards()">
+                <option value="all">All</option>
+                <option value="Common">Common</option>
+                <option value="Uncommon">Uncommon</option>
+                <option value="Rare">Rare</option>
+                <option value="Secret Rare">Secret Rare</option>
+                <option value="Super Rare">Super Rare</option>
+                <option value="Leader">Leader</option>
+                <option value="DON!!">DON!!</option>
+            </select>
+            <label for="minPrice">Minimum Price:</label>
+            <input type="number" id="minPrice" step="0.01" onchange="filterCards()" />
+        </div>
+        <div class="card-grid" id="cardGrid"></div>
+        <script>
+            const sets = {
+                OP01: 'cards_OP01.json',
+                OP02: 'cards_OP02.json',
+                OP03: 'cards_OP03.json',
+                OP04: 'cards_OP04.json',
+                OP05: 'cards_OP05.json',
+            };
+
+            async function fetchCards(set) {
+                const response = await fetch(sets[set]);
+                const cards = await response.json();
+                return cards;
+            }
+
+            async function loadSet(set) {
+                const cards = await fetchCards(set);
+                const cardGrid = document.getElementById('cardGrid');
+                cardGrid.innerHTML = cards
+                    .map(
+                        (card) => `
+                <div class="card" data-rarity="${card.rarity}" data-price="${parseFloat(card.marketPrice.replace('$', ''))}">
+                    <img src="images/${set}/${sanitizeFilename(card.name)}.jpg" alt="${card.name}">
+                    <div>${card.name}</div>
+                    <div>${card.marketPrice}</div>
+                    <div>${card.rarity}</div>
+                </div>
+            `
+                    )
+                    .join('');
+                filterCards();
+            }
+
+            function sanitizeFilename(filename) {
+                return filename.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            }
+
+            function changeSet() {
+                const set = document.getElementById('set').value;
+                loadSet(set);
+            }
+
+            function filterCards() {
+                const rarity = document.getElementById('rarity').value;
+                const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+                const cards = document.querySelectorAll('.card');
+                cards.forEach((card) => {
+                    const cardRarity = card.getAttribute('data-rarity');
+                    const cardPrice = parseFloat(card.getAttribute('data-price'));
+                    const matchesRarity = rarity === 'all' || cardRarity === rarity;
+                    const matchesPrice = cardPrice >= minPrice;
+                    if (matchesRarity && matchesPrice) {
+                        card.style.display = 'flex';
                     } else {
-                        container.classList.add('hidden');
+                        card.style.display = 'none';
                     }
-                } else {
-                    container.classList.add('hidden');
-                }
-            });
-            adjustImageSizes();
-        }
-
-        function adjustImageSizes() {
-            const rows = document.querySelectorAll('.row');
-            rows.forEach(row => {
-                const images = row.querySelectorAll('img');
-                const rowCount = Math.min(3, Math.ceil(images.length / 10));
-                const rowHeight = `calc((100vh - 100px) / ${rowCount})`;
-                images.forEach(img => {
-                    img.style.height = rowHeight;
                 });
-            });
-        }
+            }
 
-        window.addEventListener('load', () => {
-            adjustImageSizes();
-            filterCards();
-        });
-
-        window.addEventListener('resize', adjustImageSizes);
-    </script>
-</head>
-<body>
-    <div class="controls">
-        <label for="rarity-select">Choose a rarity:</label>
-        <select id="rarity-select" onchange="filterCards()">
-            <option value="All">All</option>
-            <option value="Common">Common</option><option value="Uncommon">Uncommon</option><option value="Rare">Rare</option><option value="Secret Rare">Secret Rare</option><option value="Super Rare">Super Rare</option><option value="Leader">Leader</option><option value="DON!!">DON!!</option>
-        </select>
-        <label for="min-price">Minimum Price:</label>
-        <input type="number" id="min-price" step="0.01" onchange="filterCards()">
-    </div>
-    
-    <div id="Common" class="container ">
-        <div class="row">
-            <img src="images/apis.jpg" alt="Apis" title="Apis - $0.04" data-price="$0.04"><img src="images/bananagator.jpg" alt="Bananagator" title="Bananagator - $0.03" data-price="$0.03"><img src="images/barrier__.jpg" alt="Barrier!!" title="Barrier!! - $0.06" data-price="$0.06"><img src="images/black_maria.jpg" alt="Black Maria" title="Black Maria - $0.09" data-price="$0.09"><img src="images/buggy__dash_pack_.jpg" alt="Buggy (Dash Pack)" title="Buggy (Dash Pack) - $0.32" data-price="$0.32"><img src="images/carmel.jpg" alt="Carmel" title="Carmel - $0.07" data-price="$0.07"><img src="images/charlotte_bavarois.jpg" alt="Charlotte Bavarois" title="Charlotte Bavarois - $0.02" data-price="$0.02"><img src="images/charlotte_perospero.jpg" alt="Charlotte Perospero" title="Charlotte Perospero - $0.04" data-price="$0.04"><img src="images/chinjao.jpg" alt="Chinjao" title="Chinjao - $0.04" data-price="$0.04"><img src="images/corrida_coliseum.jpg" alt="Corrida Coliseum" title="Corrida Coliseum - $0.05" data-price="$0.05"><img src="images/daddy_masterson.jpg" alt="Daddy Masterson" title="Daddy Masterson - $0.07" data-price="$0.07"><img src="images/dellinger.jpg" alt="Dellinger" title="Dellinger - $0.05" data-price="$0.05"><img src="images/donquixote_family.jpg" alt="Donquixote Family" title="Donquixote Family - $0.07" data-price="$0.07"><img src="images/giolla.jpg" alt="Giolla" title="Giolla - $0.04" data-price="$0.04"><img src="images/gun_modoki.jpg" alt="Gun Modoki" title="Gun Modoki - $0.06" data-price="$0.06"><img src="images/hanger.jpg" alt="Hanger" title="Hanger - $0.03" data-price="$0.03"><img src="images/happiness_punch.jpg" alt="Happiness Punch" title="Happiness Punch - $0.12" data-price="$0.12"><img src="images/ice_oni.jpg" alt="Ice Oni" title="Ice Oni - $0.05" data-price="$0.05"><img src="images/ideo.jpg" alt="Ideo" title="Ideo - $0.04" data-price="$0.04"><img src="images/ipponmatsu.jpg" alt="Ipponmatsu" title="Ipponmatsu - $0.05" data-price="$0.05"><img src="images/karoo.jpg" alt="Karoo" title="Karoo - $0.07" data-price="$0.07"><img src="images/kung_fu_jugon.jpg" alt="Kung Fu Jugon" title="Kung Fu Jugon - $0.10" data-price="$0.10"><img src="images/kuro.jpg" alt="Kuro" title="Kuro - $0.09" data-price="$0.09"><img src="images/miss_goldenweek_marianne_.jpg" alt="Miss.Goldenweek(Marianne)" title="Miss.Goldenweek(Marianne) - $0.06" data-price="$0.06"><img src="images/miss_merrychristmas_drophy_.jpg" alt="Miss.MerryChristmas(Drophy)" title="Miss.MerryChristmas(Drophy) - $0.05" data-price="$0.05"><img src="images/mr_13___ms_friday.jpg" alt="Mr.13 & Ms.Friday" title="Mr.13 & Ms.Friday - $0.06" data-price="$0.06"><img src="images/nami.jpg" alt="Nami" title="Nami - $0.06" data-price="$0.06"><img src="images/nefeltari_cobra.jpg" alt="Nefeltari Cobra" title="Nefeltari Cobra - $0.04" data-price="$0.04"><img src="images/oimo___kashii.jpg" alt="Oimo & Kashii" title="Oimo & Kashii - $0.04" data-price="$0.04"><img src="images/orlumbus.jpg" alt="Orlumbus" title="Orlumbus - $0.05" data-price="$0.05"><img src="images/otama.jpg" alt="Otama" title="Otama - $0.08" data-price="$0.08"><img src="images/plague_rounds.jpg" alt="Plague Rounds" title="Plague Rounds - $0.04" data-price="$0.04"><img src="images/pound.jpg" alt="Pound" title="Pound - $0.03" data-price="$0.03"><img src="images/rabiyan.jpg" alt="Rabiyan" title="Rabiyan - $0.03" data-price="$0.03"><img src="images/randolph.jpg" alt="Randolph" title="Randolph - $0.05" data-price="$0.05"><img src="images/rokki.jpg" alt="Rokki" title="Rokki - $0.05" data-price="$0.05"><img src="images/sanji__007_.jpg" alt="Sanji (007)" title="Sanji (007) - $0.05" data-price="$0.05"><img src="images/speed_jil__dash_pack_.jpg" alt="Speed Jil (Dash Pack)" title="Speed Jil (Dash Pack) - $0.45" data-price="$0.45"><img src="images/stussy.jpg" alt="Stussy" title="Stussy - $0.07" data-price="$0.07"><img src="images/the_weak_do_not_have_the_right_to_choose_how_they_die___.jpg" alt="The Weak Do Not Have the Right to Choose How They Die!!!" title="The Weak Do Not Have the Right to Choose How They Die!!! - $0.11" data-price="$0.11"><img src="images/tom.jpg" alt="Tom" title="Tom - $0.05" data-price="$0.05"><img src="images/tonoyasu.jpg" alt="Tonoyasu" title="Tonoyasu - $0.04" data-price="$0.04"><img src="images/tony_tony_chopper.jpg" alt="Tony Tony.Chopper" title="Tony Tony.Chopper - $0.06" data-price="$0.06"><img src="images/trafalgar_law.jpg" alt="Trafalgar Law" title="Trafalgar Law - $0.06" data-price="$0.06"><img src="images/viola.jpg" alt="Viola" title="Viola - $0.08" data-price="$0.08"><img src="images/weakness___is_an_unforgivable_sin_.jpg" alt="Weakness...Is an Unforgivable Sin." title="Weakness...Is an Unforgivable Sin. - $0.10" data-price="$0.10"><img src="images/yokozuna.jpg" alt="Yokozuna" title="Yokozuna - $0.09" data-price="$0.09">
-        </div>
-    </div>
-    
-    <div id="Uncommon" class="container hidden">
-        <div class="row">
-            <img src="images/baby_5.jpg" alt="Baby 5" title="Baby 5 - $0.34" data-price="$0.34"><img src="images/boodle__dash_pack_.jpg" alt="Boodle (Dash Pack)" title="Boodle (Dash Pack) - $0.42" data-price="$0.42"><img src="images/charlotte_moscato.jpg" alt="Charlotte Moscato" title="Charlotte Moscato - $0.08" data-price="$0.08"><img src="images/diable_jambe_joue_shot.jpg" alt="Diable Jambe Joue Shot" title="Diable Jambe Joue Shot - $0.06" data-price="$0.06"><img src="images/dragon_twister_demolition_breath.jpg" alt="Dragon Twister Demolition Breath" title="Dragon Twister Demolition Breath - $0.08" data-price="$0.08"><img src="images/enchanting_vertigo_dance.jpg" alt="Enchanting Vertigo Dance" title="Enchanting Vertigo Dance - $0.06" data-price="$0.06"><img src="images/eric.jpg" alt="Eric" title="Eric - $0.03" data-price="$0.03"><img src="images/flapping_thread.jpg" alt="Flapping Thread" title="Flapping Thread - $0.09" data-price="$0.09"><img src="images/gum_gum_king_kong_gun.jpg" alt="Gum-Gum King Kong Gun" title="Gum-Gum King Kong Gun - $0.16" data-price="$0.16"><img src="images/gyats.jpg" alt="Gyats" title="Gyats - $0.14" data-price="$0.14"><img src="images/hajrudin.jpg" alt="Hajrudin" title="Hajrudin - $0.06" data-price="$0.06"><img src="images/hera.jpg" alt="Hera" title="Hera - $0.06" data-price="$0.06"><img src="images/iceburg.jpg" alt="Iceburg" title="Iceburg - $0.04" data-price="$0.04"><img src="images/jack.jpg" alt="Jack" title="Jack - $0.04" data-price="$0.04"><img src="images/kouzuki_hiyori.jpg" alt="Kouzuki Hiyori" title="Kouzuki Hiyori - $0.14" data-price="$0.14"><img src="images/koza.jpg" alt="Koza" title="Koza - $0.10" data-price="$0.10"><img src="images/lao_g.jpg" alt="Lao.G" title="Lao.G - $0.06" data-price="$0.06"><img src="images/leo.jpg" alt="Leo" title="Leo - $0.09" data-price="$0.09"><img src="images/machvise.jpg" alt="Machvise" title="Machvise - $0.04" data-price="$0.04"><img src="images/monkey_d_luffy__014_.jpg" alt="Monkey.D.Luffy (014)" title="Monkey.D.Luffy (014) - $0.10" data-price="$0.10"><img src="images/mr_2_bon_kurei__bentham_.jpg" alt="Mr.2.Bon.Kurei (Bentham)" title="Mr.2.Bon.Kurei (Bentham) - $0.07" data-price="$0.07"><img src="images/mr_3__galdino_.jpg" alt="Mr.3 (Galdino)" title="Mr.3 (Galdino) - $0.05" data-price="$0.05"><img src="images/mr_4__babe_.jpg" alt="Mr.4 (Babe)" title="Mr.4 (Babe) - $0.06" data-price="$0.06"><img src="images/nez_palm_cannon.jpg" alt="Nez-Palm Cannon" title="Nez-Palm Cannon - $0.08" data-price="$0.08"><img src="images/page_one.jpg" alt="Page One" title="Page One - $0.06" data-price="$0.06"><img src="images/queen__046_.jpg" alt="Queen (046)" title="Queen (046) - $0.12" data-price="$0.12"><img src="images/sasaki.jpg" alt="Sasaki" title="Sasaki - $0.12" data-price="$0.12"><img src="images/shirahoshi__dash_pack_.jpg" alt="Shirahoshi (Dash Pack)" title="Shirahoshi (Dash Pack) - $4.03" data-price="$4.03"><img src="images/suleiman.jpg" alt="Suleiman" title="Suleiman - $0.07" data-price="$0.07"><img src="images/super_spot_billed_duck_troops.jpg" alt="Super Spot-Billed Duck Troops" title="Super Spot-Billed Duck Troops - $0.08" data-price="$0.08"><img src="images/toko.jpg" alt="Toko" title="Toko - $0.10" data-price="$0.10"><img src="images/usopp.jpg" alt="Usopp" title="Usopp - $0.13" data-price="$0.13">
-        </div>
-    </div>
-    
-    <div id="Rare" class="container hidden">
-        <div class="row">
-            <img src="images/bad_manners_kick_course.jpg" alt="Bad Manners Kick Course" title="Bad Manners Kick Course - $0.52" data-price="$0.52"><img src="images/bartolomeo.jpg" alt="Bartolomeo" title="Bartolomeo - $0.32" data-price="$0.32"><img src="images/capone_gang_bege.jpg" alt="Capone"Gang"Bege" title="Capone"Gang"Bege - $2.63" data-price="$2.63"><img src="images/capone_gang_bege__alternate_art_.jpg" alt="Capone"Gang"Bege (Alternate Art)" title="Capone"Gang"Bege (Alternate Art) - $39.68" data-price="$39.68"><img src="images/cavendish.jpg" alt="Cavendish" title="Cavendish - $0.09" data-price="$0.09"><img src="images/chaka.jpg" alt="Chaka" title="Chaka - $0.13" data-price="$0.13"><img src="images/charlotte_amande.jpg" alt="Charlotte Amande" title="Charlotte Amande - $0.14" data-price="$0.14"><img src="images/colors_trap.jpg" alt="Colors Trap" title="Colors Trap - $0.10" data-price="$0.10"><img src="images/diamante.jpg" alt="Diamante" title="Diamante - $0.12" data-price="$0.12"><img src="images/diamante__alternate_art_.jpg" alt="Diamante (Alternate Art)" title="Diamante (Alternate Art) - $7.95" data-price="$7.95"><img src="images/franky.jpg" alt="Franky" title="Franky - $0.17" data-price="$0.17"><img src="images/gum_gum_red_roc.jpg" alt="Gum-Gum Red Roc" title="Gum-Gum Red Roc - $0.86" data-price="$0.86"><img src="images/heavenly_fire.jpg" alt="Heavenly Fire" title="Heavenly Fire - $0.11" data-price="$0.11"><img src="images/igaram.jpg" alt="Igaram" title="Igaram - $0.08" data-price="$0.08"><img src="images/kalifa__dash_pack_.jpg" alt="Kalifa (Dash Pack)" title="Kalifa (Dash Pack) - $5.48" data-price="$5.48"><img src="images/kin_emon.jpg" alt="Kin'emon" title="Kin'emon - $0.09" data-price="$0.09"><img src="images/king.jpg" alt="King" title="King - $0.12" data-price="$0.12"><img src="images/kyros.jpg" alt="Kyros" title="Kyros - $0.12" data-price="$0.12"><img src="images/kyros__alternate_art_.jpg" alt="Kyros (Alternate Art)" title="Kyros (Alternate Art) - $12.48" data-price="$12.48"><img src="images/miss_valentine_mikita_.jpg" alt="Miss.Valentine(Mikita)" title="Miss.Valentine(Mikita) - $0.15" data-price="$0.15"><img src="images/monkey_d_luffy__dash_pack_.jpg" alt="Monkey.D.Luffy (Dash Pack)" title="Monkey.D.Luffy (Dash Pack) - $1.08" data-price="$1.08"><img src="images/mr_5__gem_.jpg" alt="Mr.5 (Gem)" title="Mr.5 (Gem) - $0.09" data-price="$0.09"><img src="images/mr_5__gem___alternate_art_.jpg" alt="Mr.5 (Gem) (Alternate Art)" title="Mr.5 (Gem) (Alternate Art) - $2.89" data-price="$2.89"><img src="images/olin.jpg" alt="Olin" title="Olin - $0.24" data-price="$0.24"><img src="images/rebecca__092_.jpg" alt="Rebecca (092)" title="Rebecca (092) - $0.23" data-price="$0.23"><img src="images/roronoa_zoro.jpg" alt="Roronoa Zoro" title="Roronoa Zoro - $0.18" data-price="$0.18"><img src="images/senor_pink.jpg" alt="Senor Pink" title="Senor Pink - $0.15" data-price="$0.15"><img src="images/spiderweb.jpg" alt="Spiderweb" title="Spiderweb - $0.37" data-price="$0.37"><img src="images/trebol.jpg" alt="Trebol" title="Trebol - $0.09" data-price="$0.09"><img src="images/trebol__alternate_art_.jpg" alt="Trebol (Alternate Art)" title="Trebol (Alternate Art) - $3.87" data-price="$3.87"><img src="images/trueno_bastardo.jpg" alt="Trueno Bastardo" title="Trueno Bastardo - $0.11" data-price="$0.11"><img src="images/ulti.jpg" alt="Ulti" title="Ulti - $0.09" data-price="$0.09"><img src="images/who_s_who.jpg" alt="Who's.Who" title="Who's.Who - $0.12" data-price="$0.12"><img src="images/who_s_who__alternate_art_.jpg" alt="Who's.Who (Alternate Art)" title="Who's.Who (Alternate Art) - $6.50" data-price="$6.50">
-        </div>
-    </div>
-    
-    <div id="Secret Rare" class="container hidden">
-        <div class="row">
-            <img src="images/donquixote_rosinante.jpg" alt="Donquixote Rosinante" title="Donquixote Rosinante - $7.56" data-price="$7.56"><img src="images/donquixote_rosinante__alternate_art_.jpg" alt="Donquixote Rosinante (Alternate Art)" title="Donquixote Rosinante (Alternate Art) - $19.53" data-price="$19.53"><img src="images/nefeltari_vivi__118_.jpg" alt="Nefeltari Vivi (118)" title="Nefeltari Vivi (118) - $2.91" data-price="$2.91"><img src="images/nefeltari_vivi__118___alternate_art_.jpg" alt="Nefeltari Vivi (118) (Alternate Art)" title="Nefeltari Vivi (118) (Alternate Art) - $11.36" data-price="$11.36">
-        </div>
-    </div>
-    
-    <div id="Super Rare" class="container hidden">
-        <div class="row">
-            <img src="images/boa_hancock__sp_.jpg" alt="Boa Hancock (SP)" title="Boa Hancock (SP) - $140.93" data-price="$140.93"><img src="images/crocodile__060_.jpg" alt="Crocodile (060)" title="Crocodile (060) - $0.83" data-price="$0.83"><img src="images/crocodile__060___alternate_art_.jpg" alt="Crocodile (060) (Alternate Art)" title="Crocodile (060) (Alternate Art) - $12.72" data-price="$12.72"><img src="images/donquixote_doflamingo__031_.jpg" alt="Donquixote Doflamingo (031)" title="Donquixote Doflamingo (031) - $3.36" data-price="$3.36"><img src="images/donquixote_doflamingo__031___alternate_art_.jpg" alt="Donquixote Doflamingo (031) (Alternate Art)" title="Donquixote Doflamingo (031) (Alternate Art) - $30.53" data-price="$30.53"><img src="images/edward_newgate__sp_.jpg" alt="Edward.Newgate (SP)" title="Edward.Newgate (SP) - $49.58" data-price="$49.58"><img src="images/kaido.jpg" alt="Kaido" title="Kaido - $0.78" data-price="$0.78"><img src="images/kaido__alternate_art_.jpg" alt="Kaido (Alternate Art)" title="Kaido (Alternate Art) - $12.21" data-price="$12.21"><img src="images/magellan__sp_.jpg" alt="Magellan (SP)" title="Magellan (SP) - $31.25" data-price="$31.25"><img src="images/monkey_d_luffy__090_.jpg" alt="Monkey.D.Luffy (090)" title="Monkey.D.Luffy (090) - $1.01" data-price="$1.01"><img src="images/monkey_d_luffy__090___alternate_art_.jpg" alt="Monkey.D.Luffy (090) (Alternate Art)" title="Monkey.D.Luffy (090) (Alternate Art) - $14.71" data-price="$14.71"><img src="images/ms__all_sunday.jpg" alt="Ms. All Sunday" title="Ms. All Sunday - $2.47" data-price="$2.47"><img src="images/ms__all_sunday__alternate_art_.jpg" alt="Ms. All Sunday (Alternate Art)" title="Ms. All Sunday (Alternate Art) - $36.03" data-price="$36.03"><img src="images/pell.jpg" alt="Pell" title="Pell - $0.36" data-price="$0.36"><img src="images/pell__alternate_art_.jpg" alt="Pell (Alternate Art)" title="Pell (Alternate Art) - $4.31" data-price="$4.31"><img src="images/sabo.jpg" alt="Sabo" title="Sabo - $20.30" data-price="$20.30"><img src="images/sabo__alternate_art_.jpg" alt="Sabo (Alternate Art)" title="Sabo (Alternate Art) - $64.80" data-price="$64.80"><img src="images/sabo__alternate_art___manga_.jpg" alt="Sabo (Alternate Art) (Manga)" title="Sabo (Alternate Art) (Manga) - $526.34" data-price="$526.34"><img src="images/sakazuki__sp_.jpg" alt="Sakazuki (SP)" title="Sakazuki (SP) - $31.78" data-price="$31.78"><img src="images/sanji__104_.jpg" alt="Sanji (104)" title="Sanji (104) - $5.36" data-price="$5.36"><img src="images/sanji__104___alternate_art_.jpg" alt="Sanji (104) (Alternate Art)" title="Sanji (104) (Alternate Art) - $33.85" data-price="$33.85"><img src="images/sugar.jpg" alt="Sugar" title="Sugar - $2.06" data-price="$2.06"><img src="images/sugar__alternate_art_.jpg" alt="Sugar (Alternate Art)" title="Sugar (Alternate Art) - $11.67" data-price="$11.67"><img src="images/trafalgar_law__sp_.jpg" alt="Trafalgar Law (SP)" title="Trafalgar Law (SP) - $61.97" data-price="$61.97"><img src="images/yamato.jpg" alt="Yamato" title="Yamato - $5.90" data-price="$5.90"><img src="images/yamato__alternate_art_.jpg" alt="Yamato (Alternate Art)" title="Yamato (Alternate Art) - $70.58" data-price="$70.58">
-        </div>
-    </div>
-    
-    <div id="Leader" class="container hidden">
-        <div class="row">
-            <img src="images/crocodile__058_.jpg" alt="Crocodile (058)" title="Crocodile (058) - $0.09" data-price="$0.09"><img src="images/crocodile__058___alternate_art_.jpg" alt="Crocodile (058) (Alternate Art)" title="Crocodile (058) (Alternate Art) - $41.80" data-price="$41.80"><img src="images/donquixote_doflamingo__019_.jpg" alt="Donquixote Doflamingo (019)" title="Donquixote Doflamingo (019) - $0.11" data-price="$0.11"><img src="images/donquixote_doflamingo__019___alternate_art_.jpg" alt="Donquixote Doflamingo (019) (Alternate Art)" title="Donquixote Doflamingo (019) (Alternate Art) - $37.28" data-price="$37.28"><img src="images/issho.jpg" alt="Issho" title="Issho - $0.11" data-price="$0.11"><img src="images/issho__alternate_art_.jpg" alt="Issho (Alternate Art)" title="Issho (Alternate Art) - $16.62" data-price="$16.62"><img src="images/nefeltari_vivi__001_.jpg" alt="Nefeltari Vivi (001)" title="Nefeltari Vivi (001) - $0.09" data-price="$0.09"><img src="images/nefeltari_vivi__001___alternate_art_.jpg" alt="Nefeltari Vivi (001) (Alternate Art)" title="Nefeltari Vivi (001) (Alternate Art) - $45.00" data-price="$45.00"><img src="images/queen__040_.jpg" alt="Queen (040)" title="Queen (040) - $0.09" data-price="$0.09"><img src="images/queen__040___alternate_art_.jpg" alt="Queen (040) (Alternate Art)" title="Queen (040) (Alternate Art) - $21.25" data-price="$21.25"><img src="images/rebecca__039_.jpg" alt="Rebecca (039)" title="Rebecca (039) - $0.12" data-price="$0.12"><img src="images/rebecca__039___alternate_art_.jpg" alt="Rebecca (039) (Alternate Art)" title="Rebecca (039) (Alternate Art) - $58.43" data-price="$58.43">
-        </div>
-    </div>
-    
-    <div id="DON!!" class="container hidden">
-        <div class="row">
-            <img src="images/don___card__alternate_art_.jpg" alt="DON!! Card (Alternate Art)" title="DON!! Card (Alternate Art) - $0.52" data-price="$0.52"><img src="images/don___card__black___white___special_don___card_pack_.jpg" alt="DON!! Card (Black & White) (Special DON!! Card Pack)" title="DON!! Card (Black & White) (Special DON!! Card Pack) - $4.93" data-price="$4.93"><img src="images/don___card__color___special_don___card_pack_.jpg" alt="DON!! Card (Color) (Special DON!! Card Pack)" title="DON!! Card (Color) (Special DON!! Card Pack) - $7.96" data-price="$7.96">
-        </div>
-    </div>
-    
-</body>
+            window.onload = () => {
+                loadSet('OP01');
+            };
+        </script>
+    </body>
 </html>
-    
