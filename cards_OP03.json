@@ -1,37 +1,37 @@
 [
   {
     "name": "Adio",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499880.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Air Door",
-    "marketPrice": "$0.14",
+    "marketPrice": "$0.30",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500044.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Alvida",
-    "marketPrice": "$0.02",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499897.jpg",
     "rarity": "Common"
   },
   {
     "name": "Arlong",
-    "marketPrice": "$0.11",
+    "marketPrice": "$0.14",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498063.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Arlong (Alternate Art)",
-    "marketPrice": "$48.64",
+    "marketPrice": "$32.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498064.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Bell-mere",
-    "marketPrice": "$0.29",
+    "marketPrice": "$0.17",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499980.jpg",
     "rarity": "Rare"
   },
@@ -43,7 +43,7 @@
   },
   {
     "name": "Blueno",
-    "marketPrice": "$0.14",
+    "marketPrice": "$0.15",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500038.jpg",
     "rarity": "Rare"
   },
@@ -55,43 +55,43 @@
   },
   {
     "name": "Boodle",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499979.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Brannew",
-    "marketPrice": "$1.27",
+    "marketPrice": "$1.12",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500037.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Buchi",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.08",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499906.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Buggy (008)",
-    "marketPrice": "$0.39",
+    "marketPrice": "$0.26",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499886.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Buggy (032)",
-    "marketPrice": "$0.09",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499904.jpg",
     "rarity": "Common"
   },
   {
     "name": "Buzz Cut Mochi",
-    "marketPrice": "$0.22",
+    "marketPrice": "$0.16",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500107.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Camie",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500058.jpg",
     "rarity": "Common"
   },
@@ -103,19 +103,19 @@
   },
   {
     "name": "Charlotte Chiffon",
-    "marketPrice": "$0.04",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500081.jpg",
     "rarity": "Common"
   },
   {
     "name": "Charlotte Cracker",
-    "marketPrice": "$6.88",
+    "marketPrice": "$3.52",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500077.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Charlotte Cracker (Alternate Art)",
-    "marketPrice": "$27.51",
+    "marketPrice": "$13.81",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500079.jpg",
     "rarity": "Super Rare"
   },
@@ -127,79 +127,79 @@
   },
   {
     "name": "Charlotte Katakuri (099)",
-    "marketPrice": "$0.25",
+    "marketPrice": "$0.26",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498483.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Charlotte Katakuri (099) (Alternate Art)",
-    "marketPrice": "$192.64",
+    "marketPrice": "$109.70",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498484.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Charlotte Katakuri (123)",
-    "marketPrice": "$71.15",
+    "marketPrice": "$47.36",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500120.jpg",
     "rarity": "Secret Rare"
   },
   {
     "name": "Charlotte Katakuri (123) (Alternate Art)",
-    "marketPrice": "$128.54",
+    "marketPrice": "$86.38",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500122.jpg",
     "rarity": "Secret Rare"
   },
   {
     "name": "Charlotte Linlin (077)",
-    "marketPrice": "$0.23",
+    "marketPrice": "$0.19",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498481.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Charlotte Linlin (077) (Alternate Art)",
-    "marketPrice": "$35.11",
+    "marketPrice": "$22.39",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498482.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Charlotte Linlin (114)",
-    "marketPrice": "$5.90",
+    "marketPrice": "$3.31",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500092.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Charlotte Linlin (114) (Alternate Art)",
-    "marketPrice": "$22.37",
+    "marketPrice": "$14.27",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500093.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Charlotte Opera",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.06",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500072.jpg",
     "rarity": "Common"
   },
   {
     "name": "Charlotte Oven",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500069.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Charlotte Perospero",
-    "marketPrice": "$2.62",
+    "marketPrice": "$2.31",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500088.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Charlotte Perospero (Alternate Art)",
-    "marketPrice": "$28.67",
+    "marketPrice": "$13.51",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500090.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Charlotte Praline",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500084.jpg",
     "rarity": "Common"
   },
@@ -211,37 +211,37 @@
   },
   {
     "name": "Charlotte Pudding (Alternate Art)",
-    "marketPrice": "$47.85",
+    "marketPrice": "$27.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500086.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Charlotte Smoothie",
-    "marketPrice": "$0.26",
+    "marketPrice": "$0.20",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500083.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Chew",
-    "marketPrice": "$0.11",
+    "marketPrice": "$0.09",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499901.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Chimney & Gonbe",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.06",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500005.jpg",
     "rarity": "Common"
   },
   {
     "name": "Corgy",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500022.jpg",
     "rarity": "Common"
   },
   {
     "name": "Cross Fire",
-    "marketPrice": "$0.14",
+    "marketPrice": "$0.18",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499894.jpg",
     "rarity": "Uncommon"
   },
@@ -253,7 +253,7 @@
   },
   {
     "name": "DON!! Card (Alternate Art)",
-    "marketPrice": "$1.15",
+    "marketPrice": "$0.98",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498519.jpg",
     "rarity": "DON!!"
   },
@@ -265,19 +265,19 @@
   },
   {
     "name": "Donquixote Doflamingo (Wanted Poster)",
-    "marketPrice": "$28.78",
+    "marketPrice": "$21.91",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/501679.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Enies Lobby",
-    "marketPrice": "$0.11",
+    "marketPrice": "$0.20",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500056.jpg",
     "rarity": "Common"
   },
   {
     "name": "Eustass\"Captain\"Kid (Wanted Poster)",
-    "marketPrice": "$75.17",
+    "marketPrice": "$66.54",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/501677.jpg",
     "rarity": "Super Rare"
   },
@@ -289,199 +289,199 @@
   },
   {
     "name": "Fire Fist",
-    "marketPrice": "$0.35",
+    "marketPrice": "$0.21",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498783.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Fire Fist (Alternate Art)",
-    "marketPrice": "$19.53",
+    "marketPrice": "$21.00",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498784.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Flame Emperor",
-    "marketPrice": "$0.20",
+    "marketPrice": "$0.19",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499893.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Fossa",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.06",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499888.jpg",
     "rarity": "Common"
   },
   {
     "name": "Fukurou",
-    "marketPrice": "$0.18",
+    "marketPrice": "$0.15",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500036.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Gaimon",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499972.jpg",
     "rarity": "Common"
   },
   {
     "name": "Galley-La Company",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500015.jpg",
     "rarity": "Common"
   },
   {
     "name": "Genzo",
-    "marketPrice": "$0.03",
+    "marketPrice": "$0.02",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499976.jpg",
     "rarity": "Common"
   },
   {
     "name": "Gin",
-    "marketPrice": "$0.13",
+    "marketPrice": "$0.12",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498861.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Gin (Alternate Art)",
-    "marketPrice": "$5.88",
+    "marketPrice": "$4.74",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498862.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Gum-Gum Giant Gavel",
-    "marketPrice": "$0.11",
+    "marketPrice": "$0.13",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499985.jpg",
     "rarity": "Common"
   },
   {
     "name": "Gum-Gum Jet Gatling",
-    "marketPrice": "$0.76",
+    "marketPrice": "$1.34",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500011.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Haruta",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499887.jpg",
     "rarity": "Common"
   },
   {
     "name": "Hatchan",
-    "marketPrice": "$0.19",
+    "marketPrice": "$0.13",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499905.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Helmeppo",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500039.jpg",
     "rarity": "Common"
   },
   {
     "name": "Hull Dismantler Slash",
-    "marketPrice": "$0.04",
+    "marketPrice": "$0.03",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500013.jpg",
     "rarity": "Common"
   },
   {
     "name": "Iceburg",
-    "marketPrice": "$0.16",
+    "marketPrice": "$0.11",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498296.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Iceburg (Alternate Art)",
-    "marketPrice": "$35.17",
+    "marketPrice": "$27.36",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498297.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Ikoku Sovereignty",
-    "marketPrice": "$0.18",
+    "marketPrice": "$0.19",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500105.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Issho",
-    "marketPrice": "$4.21",
+    "marketPrice": "$4.47",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499497.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Issho (Alternate Art)",
-    "marketPrice": "$28.40",
+    "marketPrice": "$22.43",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499498.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Izo",
-    "marketPrice": "$0.38",
+    "marketPrice": "$0.41",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499881.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Jabra",
-    "marketPrice": "$0.04",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500027.jpg",
     "rarity": "Common"
   },
   {
     "name": "Jango",
-    "marketPrice": "$0.19",
+    "marketPrice": "$0.13",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499900.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Jerry",
-    "marketPrice": "$0.04",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500026.jpg",
     "rarity": "Common"
   },
   {
     "name": "Kaido (Wanted Poster)",
-    "marketPrice": "$60.10",
+    "marketPrice": "$43.90",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/501680.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Kaku (059)",
-    "marketPrice": "$0.12",
+    "marketPrice": "$0.10",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499990.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Kaku (080)",
-    "marketPrice": "$4.75",
+    "marketPrice": "$2.56",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500017.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Kaku (080) (Alternate Art)",
-    "marketPrice": "$36.42",
+    "marketPrice": "$27.26",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500018.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Kalifa (060)",
-    "marketPrice": "$0.26",
+    "marketPrice": "$0.19",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499992.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Kalifa (081)",
-    "marketPrice": "$0.50",
+    "marketPrice": "$0.76",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500019.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Kalifa (081) (Alternate Art)",
-    "marketPrice": "$55.67",
+    "marketPrice": "$50.96",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500020.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Kaya",
-    "marketPrice": "$1.30",
+    "marketPrice": "$1.81",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499973.jpg",
     "rarity": "Rare"
   },
@@ -499,67 +499,67 @@
   },
   {
     "name": "Kokoro",
-    "marketPrice": "$0.14",
+    "marketPrice": "$0.18",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499997.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Krieg",
-    "marketPrice": "$0.73",
+    "marketPrice": "$0.81",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499028.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Krieg (Alternate Art)",
-    "marketPrice": "$6.32",
+    "marketPrice": "$5.33",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499029.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Kumadori",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500021.jpg",
     "rarity": "Common"
   },
   {
     "name": "Kuro",
-    "marketPrice": "$0.13",
+    "marketPrice": "$0.14",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498038.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Kuro (Alternate Art)",
-    "marketPrice": "$22.34",
+    "marketPrice": "$17.79",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498039.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Kuroobi",
-    "marketPrice": "$0.10",
+    "marketPrice": "$0.09",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499898.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Lim",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.09",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499892.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Marco",
-    "marketPrice": "$9.67",
+    "marketPrice": "$8.72",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498595.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Marco (Alternate Art)",
-    "marketPrice": "$37.02",
+    "marketPrice": "$25.66",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498597.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Marshall.D.Teach",
-    "marketPrice": "$0.11",
+    "marketPrice": "$0.13",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499890.jpg",
     "rarity": "Rare"
   },
@@ -571,19 +571,19 @@
   },
   {
     "name": "Minorhinoceros",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500008.jpg",
     "rarity": "Common"
   },
   {
     "name": "Minozebra",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.08",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500007.jpg",
     "rarity": "Common"
   },
   {
     "name": "Momoo",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.03",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499907.jpg",
     "rarity": "Common"
   },
@@ -595,163 +595,163 @@
   },
   {
     "name": "Monkey.D.Luffy",
-    "marketPrice": "$0.16",
+    "marketPrice": "$0.12",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500009.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Monkey.D.Luffy (Wanted Poster)",
-    "marketPrice": "$103.06",
+    "marketPrice": "$80.52",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/501678.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Nami (030)",
-    "marketPrice": "$0.16",
+    "marketPrice": "$0.14",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499902.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Nami (040)",
-    "marketPrice": "$0.30",
+    "marketPrice": "$0.36",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498253.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Nami (040) (Alternate Art)",
-    "marketPrice": "$175.21",
+    "marketPrice": "$180.91",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498254.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Namule",
-    "marketPrice": "$0.04",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499885.jpg",
     "rarity": "Common"
   },
   {
     "name": "Napoleon",
-    "marketPrice": "$0.09",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500102.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Nero",
-    "marketPrice": "$0.03",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500035.jpg",
     "rarity": "Common"
   },
   {
     "name": "Nojiko",
-    "marketPrice": "$0.16",
+    "marketPrice": "$0.11",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499977.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "One, Two, Jango",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.09",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499970.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Out-of-the-Bag",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.09",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499908.jpg",
     "rarity": "Common"
   },
   {
     "name": "Patty",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.06",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499978.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Paulie",
-    "marketPrice": "$1.38",
+    "marketPrice": "$1.34",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499399.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Paulie (Alternate Art)",
-    "marketPrice": "$19.28",
+    "marketPrice": "$10.72",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499400.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Pearl",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499903.jpg",
     "rarity": "Common"
   },
   {
     "name": "Peepley Lulu",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500006.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Portgas.D.Ace",
-    "marketPrice": "$0.21",
+    "marketPrice": "$0.18",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/497932.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Portgas.D.Ace (Alternate Art)",
-    "marketPrice": "$68.04",
+    "marketPrice": "$54.14",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/497934.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Rob Lucci (071)",
-    "marketPrice": "$0.13",
+    "marketPrice": "$0.12",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500010.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Rob Lucci (076)",
-    "marketPrice": "$0.14",
+    "marketPrice": "$0.13",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498485.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Rob Lucci (076) (Alternate Art)",
-    "marketPrice": "$32.56",
+    "marketPrice": "$24.57",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/498486.jpg",
     "rarity": "Leader"
   },
   {
     "name": "Rob Lucci (092)",
-    "marketPrice": "$0.72",
+    "marketPrice": "$0.46",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500040.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Rob Lucci (092) (Alternate Art)",
-    "marketPrice": "$9.15",
+    "marketPrice": "$6.15",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500041.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Sanji",
-    "marketPrice": "$0.61",
+    "marketPrice": "$0.49",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500063.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Sanji's Pilaf",
-    "marketPrice": "$2.64",
+    "marketPrice": "$3.68",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499986.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Sham",
-    "marketPrice": "$0.04",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499899.jpg",
     "rarity": "Common"
   },
   {
     "name": "Shirahoshi",
-    "marketPrice": "$0.55",
+    "marketPrice": "$0.53",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500095.jpg",
     "rarity": "Uncommon"
   },
@@ -763,169 +763,169 @@
   },
   {
     "name": "Six King Pistol",
-    "marketPrice": "$0.22",
+    "marketPrice": "$0.38",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500054.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Soap Sheep",
-    "marketPrice": "$0.10",
+    "marketPrice": "$0.11",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500050.jpg",
     "rarity": "Common"
   },
   {
     "name": "Sogeking",
-    "marketPrice": "$5.95",
+    "marketPrice": "$3.03",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/501997.jpg",
     "rarity": "Secret Rare"
   },
   {
     "name": "Sogeking (Alternate Art)",
-    "marketPrice": "$13.06",
+    "marketPrice": "$8.86",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500116.jpg",
     "rarity": "Secret Rare"
   },
   {
     "name": "Sogeking (Alternate Art) (Manga)",
-    "marketPrice": "$601.49",
+    "marketPrice": "$357.37",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500118.jpg",
     "rarity": "Secret Rare"
   },
   {
     "name": "Spandam",
-    "marketPrice": "$1.65",
+    "marketPrice": "$1.29",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500030.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Spandam (Alternate Art)",
-    "marketPrice": "$27.70",
+    "marketPrice": "$26.15",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500033.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Speed Jil",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499884.jpg",
     "rarity": "Common"
   },
   {
     "name": "Streusen",
-    "marketPrice": "$0.28",
+    "marketPrice": "$0.21",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500094.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Striker",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499896.jpg",
     "rarity": "Common"
   },
   {
     "name": "Tempest Kick Sky Slicer",
-    "marketPrice": "$0.14",
+    "marketPrice": "$0.13",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500051.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Thatch",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.06",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499883.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Three Thousand Worlds",
-    "marketPrice": "$0.54",
+    "marketPrice": "$0.37",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499988.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Thunder Bolt",
-    "marketPrice": "$0.11",
+    "marketPrice": "$0.14",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500112.jpg",
     "rarity": "Common"
   },
   {
     "name": "Tilestone",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500002.jpg",
     "rarity": "Common"
   },
   {
     "name": "Tooth Attack",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.12",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499909.jpg",
     "rarity": "Common"
   },
   {
     "name": "Top Knot",
-    "marketPrice": "$0.14",
+    "marketPrice": "$0.15",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500014.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Tropical Torment",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.09",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500110.jpg",
     "rarity": "Common"
   },
   {
     "name": "Usopp",
-    "marketPrice": "$0.88",
+    "marketPrice": "$0.53",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499190.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Usopp (Alternate Art)",
-    "marketPrice": "$10.23",
+    "marketPrice": "$6.99",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499191.jpg",
     "rarity": "Super Rare"
   },
   {
     "name": "Usopp's Pirate Crew",
-    "marketPrice": "$0.05",
+    "marketPrice": "$0.04",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499971.jpg",
     "rarity": "Common"
   },
   {
     "name": "Usopp's Rubber Band of Doom!!!",
-    "marketPrice": "$0.12",
+    "marketPrice": "$0.11",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499983.jpg",
     "rarity": "Common"
   },
   {
     "name": "Vergo",
-    "marketPrice": "$0.23",
+    "marketPrice": "$0.19",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500016.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Wanze",
-    "marketPrice": "$0.06",
+    "marketPrice": "$0.07",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500042.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Yosaku & Johnny",
-    "marketPrice": "$0.07",
+    "marketPrice": "$0.05",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499982.jpg",
     "rarity": "Common"
   },
   {
     "name": "Zambai",
-    "marketPrice": "$0.08",
+    "marketPrice": "$0.06",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/500001.jpg",
     "rarity": "Uncommon"
   },
   {
     "name": "Zeff",
-    "marketPrice": "$0.27",
+    "marketPrice": "$0.26",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499283.jpg",
     "rarity": "Rare"
   },
   {
     "name": "Zeff (Alternate Art)",
-    "marketPrice": "$13.68",
+    "marketPrice": "$9.63",
     "imageUrl": "https://product-images.tcgplayer.com/fit-in/437x437/499287.jpg",
     "rarity": "Rare"
   }
