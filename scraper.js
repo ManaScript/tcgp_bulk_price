@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
-const axios = require('axios');
 
 const sets = {
     OP01: 'https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game/price-guides/romance-dawn',
@@ -11,157 +10,141 @@ const sets = {
     OP05: 'https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game/price-guides/awakening-of-the-new-era',
 };
 
-// Helper function to download images
 async function downloadImage(url, filepath) {
-    const response = await axios({
-        url,
-        responseType: 'stream',
-    });
-    return new Promise((resolve, reject) => {
-        response.data.pipe(fs.createWriteStream(filepath)).on('finish', resolve).on('error', reject);
-    });
+    const response = await fetch(url);
+    const buffer = await response.buffer();
+    await fs.writeFile(filepath, buffer);
 }
 
-// Function to sanitize filenames
-function sanitizeFilename(filename) {
-    return filename.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-}
-
-// Main scraping function
-async function scrapeData(setUrl, setName) {
-    const browser = await puppeteer.launch({ headless: true });
+async function scrapeData(setCode, url) {
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.setViewport({ width: 1400, height: 900 });
 
-    await page.goto(setUrl, { waitUntil: 'networkidle2' });
-
-    // Wait for the page to load
-    await page.waitForSelector('.tcg-table-body tr');
+    await page.setViewport({ width: 1400, height: 800 });
+    await page.goto(url, { waitUntil: 'networkidle2' });
 
     const cards = await page.evaluate(() => {
-        const rows = Array.from(document.querySelectorAll('.tcg-table-body tr'));
-        return rows
+        const rows = document.querySelectorAll('.tcg-table-body tr');
+        return Array.from(rows)
             .map((row) => {
-                const nameElement = row.querySelector('td:nth-child(3) a');
-                const priceElement = row.querySelector('td:nth-child(8)');
-                const imageElement = row.querySelector('td:nth-child(2) img');
-                const rarityElement = row.querySelector('td:nth-child(6)');
-                const name = nameElement ? nameElement.textContent.trim() : null;
-                const marketPrice = priceElement ? priceElement.textContent.trim() : null;
-                const imageUrl = imageElement ? imageElement.src : null;
-                const rarity = rarityElement ? rarityElement.textContent.trim() : null;
-                return { name, marketPrice, imageUrl, rarity };
+                const name = row.querySelector('td:nth-child(3) a')?.innerText.trim().toLowerCase();
+                const price = row.querySelector('td:nth-child(8)')?.innerText.trim();
+                const rarity = row.querySelector('td:nth-child(6)')?.innerText.trim();
+                const imgUrl = row.querySelector('td:nth-child(2) img')?.src;
+
+                if (name && price && rarity && imgUrl) {
+                    return { name, price, rarity, imgUrl };
+                }
+                return null;
             })
-            .filter((card) => card.name && card.marketPrice && card.imageUrl && card.rarity);
+            .filter((card) => card !== null);
     });
 
-    if (!fs.existsSync(`images/${setName}`)) {
-        fs.mkdirSync(`images/${setName}`, { recursive: true });
-    }
+    const imageDir = path.join(__dirname, 'images', setCode.toLowerCase());
+    await fs.mkdir(imageDir, { recursive: true });
 
     for (const card of cards) {
-        const sanitizedFilename = sanitizeFilename(card.name);
-        const imagePath = path.join(`images/${setName}`, `${sanitizedFilename}.jpg`);
-        await downloadImage(card.imageUrl, imagePath);
+        const imageName = card.name.replace(/[^a-z0-9]/g, '-') + '.jpg';
+        const imagePath = path.join(imageDir, imageName);
+        await downloadImage(card.imgUrl, imagePath);
+        card.imgUrl = `images/${setCode.toLowerCase()}/${imageName}`;
     }
 
-    const data = JSON.stringify(cards, null, 2);
-    fs.writeFileSync(`cards_${setName}.json`, data);
-
-    await createHtmlFile(cards, setName);
+    await fs.writeFile(path.join(__dirname, `${setCode.toLowerCase()}.json`), JSON.stringify(cards, null, 2));
 
     await browser.close();
+    console.log(`Scraping for set ${setCode} completed.`);
 }
 
-// Function to create HTML file
-async function createHtmlFile(cards, setName) {
+async function main() {
+    for (const [setCode, url] of Object.entries(sets)) {
+        await scrapeData(setCode, url);
+    }
+    createHtmlFile(); // Assuming this function generates the index.html file
+}
+
+main().catch(console.error);
+
+function createHtmlFile() {
+    // Generate HTML file that will load by default with OP01 and handle other sets as selected from a dropdown
     const htmlContent = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Collection</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .filter-section { margin: 20px; }
-        .card-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .card { display: flex; flex-direction: column; align-items: center; }
-        .card img { width: auto; max-height: calc((100vh - 150px) / 3); max-width: 313px; }
-    </style>
-</head>
-<body>
-    <div class="filter-section">
-        <label for="set">Select Set:</label>
-        <select id="set" onchange="changeSet()">
-            ${Object.keys(sets)
-                .map((set) => `<option value="${set}" ${set === setName ? 'selected' : ''}>${set}</option>`)
-                .join('')}
-        </select>
-        <label for="rarity">Filter by Rarity:</label>
-        <select id="rarity" onchange="filterCards()">
-            <option value="all">All</option>
-            <option value="Common">Common</option>
-            <option value="Uncommon">Uncommon</option>
-            <option value="Rare">Rare</option>
-            <option value="Secret Rare">Secret Rare</option>
-            <option value="Super Rare">Super Rare</option>
-            <option value="Leader">Leader</option>
-            <option value="DON!!">DON!!</option>
-        </select>
-        <label for="minPrice">Minimum Price:</label>
-        <input type="number" id="minPrice" step="0.01" onchange="filterCards()">
-    </div>
-    <div class="card-grid" id="cardGrid">
-        ${cards
-            .map(
-                (card) => `
-        <div class="card" data-rarity="${card.rarity}" data-price="${parseFloat(card.marketPrice.replace('$', ''))}">
-            <img src="images/${setName}/${sanitizeFilename(card.name)}.jpg" alt="${card.name}">
-            <div>${card.name}</div>
-            <div>${card.marketPrice}</div>
-            <div>${card.rarity}</div>
-        </div>`
-            )
-            .join('')}
-    </div>
-    <script>
-        function changeSet() {
-            const set = document.getElementById('set').value;
-            window.location.href = set + '.html';
-        }
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>One Piece Card Game Price Guide</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+            .controls { padding: 20px; }
+            .controls select, .controls input { margin-right: 10px; padding: 5px; }
+            .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(313px, 1fr)); grid-auto-rows: auto; gap: 10px; padding: 20px; }
+            .gallery img { width: 100%; height: auto; }
+        </style>
+    </head>
+    <body>
+        <div class="controls">
+            <select id="setSelector">
+                <option value="op01">Romance Dawn (OP01)</option>
+                <option value="op02">Paramount War (OP02)</option>
+                <option value="op03">Pillars of Strength (OP03)</option>
+                <option value="op04">Kingdoms of Intrigue (OP04)</option>
+                <option value="op05">Awakening of the New Era (OP05)</option>
+            </select>
+            <input type="number" id="priceFilter" placeholder="Min price" step="0.01" />
+            <select id="rarityFilter">
+                <option value="all">All Rarities</option>
+                <option value="common">Common</option>
+                <option value="uncommon">Uncommon</option>
+                <option value="rare">Rare</option>
+                <option value="secret rare">Secret Rare</option>
+                <option value="super rare">Super Rare</option>
+                <option value="leader">Leader</option>
+                <option value="don">DON!!</option>
+            </select>
+        </div>
+        <div id="gallery" class="gallery"></div>
+        <script>
+            const setSelector = document.getElementById('setSelector');
+            const priceFilter = document.getElementById('priceFilter');
+            const rarityFilter = document.getElementById('rarityFilter');
+            const gallery = document.getElementById('gallery');
 
-        function filterCards() {
-            const rarity = document.getElementById('rarity').value;
-            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                const cardRarity = card.getAttribute('data-rarity');
-                const cardPrice = parseFloat(card.getAttribute('data-price'));
-                const matchesRarity = rarity === 'all' || cardRarity === rarity;
-                const matchesPrice = cardPrice >= minPrice;
-                if (matchesRarity && matchesPrice) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+            setSelector.value = 'op01'; // Default to OP01
 
-        window.onload = filterCards;
-    </script>
-</body>
-</html>
+            async function loadSet() {
+                const setCode = setSelector.value;
+                const response = await fetch(\`\${setCode}.json\`);
+                const cards = await response.json();
+                displayCards(cards);
+            }
+
+            function displayCards(cards) {
+                gallery.innerHTML = '';
+                const minPrice = parseFloat(priceFilter.value) || 0;
+                const rarity = rarityFilter.value;
+
+                const filteredCards = cards.filter(card => parseFloat(card.price.replace('$', '')) >= minPrice && (rarity === 'all' || card.rarity.toLowerCase() === rarity));
+
+                filteredCards.forEach(card => {
+                    const img = document.createElement('img');
+                    img.src = card.imgUrl;
+                    img.alt = card.name;
+                    gallery.appendChild(img);
+                });
+            }
+
+            setSelector.addEventListener('change', loadSet);
+            priceFilter.addEventListener('input', () => loadSet());
+            rarityFilter.addEventListener('change', () => loadSet());
+
+            loadSet(); // Initial load
+        </script>
+    </body>
+    </html>
     `;
 
-    fs.writeFileSync(`${setName}.html`, htmlContent);
+    fs.writeFile(path.join(__dirname, 'index.html'), htmlContent, 'utf8')
+        .then(() => console.log('index.html created'))
+        .catch((err) => console.error('Error creating index.html:', err));
 }
-
-// Run the scraper for each set
-(async () => {
-    for (const [setName, setUrl] of Object.entries(sets)) {
-        console.log(`Scraping data for set ${setName}...`);
-        await scrapeData(setUrl, setName);
-        console.log(`Data for set ${setName} has been scraped.`);
-    }
-})();
