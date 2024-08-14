@@ -1,121 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>One Piece Card Game Price Guides</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>One Piece Card Game Price Guide</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            .filter-section {
-                margin: 20px;
-            }
-            .card-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            .card {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .card img {
-                width: auto;
-                max-height: calc((100vh - 150px) / 3);
-                max-width: 313px;
-            }
+            body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+            .controls { padding: 20px; }
+            .controls select, .controls input { margin-right: 10px; padding: 5px; }
+            .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(313px, 1fr)); grid-auto-rows: auto; gap: 10px; padding: 20px; }
+            .gallery img { width: 100%; height: auto; }
         </style>
     </head>
     <body>
-        <div class="filter-section">
-            <label for="set">Select Set:</label>
-            <select id="set" onchange="changeSet()">
-                <option value="OP01" selected>Romance Dawn (OP01)</option>
-                <option value="OP02">Paramount War (OP02)</option>
-                <option value="OP03">Pillars of Strength (OP03)</option>
-                <option value="OP04">Kingdoms of Intrigue (OP04)</option>
-                <option value="OP05">Awakening of the New Era (OP05)</option>
+        <div class="controls">
+            <select id="setSelector">
+                <option value="op01">Romance Dawn (OP01)</option>
+                <option value="op02">Paramount War (OP02)</option>
+                <option value="op03">Pillars of Strength (OP03)</option>
+                <option value="op04">Kingdoms of Intrigue (OP04)</option>
+                <option value="op05">Awakening of the New Era (OP05)</option>
             </select>
-            <label for="rarity">Filter by Rarity:</label>
-            <select id="rarity" onchange="filterCards()">
-                <option value="all">All</option>
-                <option value="Common">Common</option>
-                <option value="Uncommon">Uncommon</option>
-                <option value="Rare">Rare</option>
-                <option value="Secret Rare">Secret Rare</option>
-                <option value="Super Rare">Super Rare</option>
-                <option value="Leader">Leader</option>
-                <option value="DON!!">DON!!</option>
+            <input type="number" id="priceFilter" placeholder="Min price" step="0.01" />
+            <select id="rarityFilter">
+                <option value="all">All Rarities</option>
+                <option value="common">Common</option>
+                <option value="uncommon">Uncommon</option>
+                <option value="rare">Rare</option>
+                <option value="secret rare">Secret Rare</option>
+                <option value="super rare">Super Rare</option>
+                <option value="leader">Leader</option>
+                <option value="don">DON!!</option>
             </select>
-            <label for="minPrice">Minimum Price:</label>
-            <input type="number" id="minPrice" step="0.01" onchange="filterCards()" />
         </div>
-        <div class="card-grid" id="cardGrid"></div>
+        <div id="gallery" class="gallery"></div>
         <script>
-            const sets = {
-                OP01: 'cards_OP01.json',
-                OP02: 'cards_OP02.json',
-                OP03: 'cards_OP03.json',
-                OP04: 'cards_OP04.json',
-                OP05: 'cards_OP05.json',
-            };
+            const setSelector = document.getElementById('setSelector');
+            const priceFilter = document.getElementById('priceFilter');
+            const rarityFilter = document.getElementById('rarityFilter');
+            const gallery = document.getElementById('gallery');
 
-            async function fetchCards(set) {
-                const response = await fetch(sets[set]);
+            setSelector.value = 'op01'; // Default to OP01
+
+            async function loadSet() {
+                const setCode = setSelector.value;
+                const response = await fetch(`${setCode}.json`);
                 const cards = await response.json();
-                return cards;
+                displayCards(cards);
             }
 
-            async function loadSet(set) {
-                const cards = await fetchCards(set);
-                const cardGrid = document.getElementById('cardGrid');
-                cardGrid.innerHTML = cards
-                    .map(
-                        (card) => `
-                <div class="card" data-rarity="${card.rarity}" data-price="${parseFloat(card.marketPrice.replace('$', ''))}">
-                    <img src="images/${set}/${sanitizeFilename(card.name)}.jpg" alt="${card.name}">
-                    <div>${card.name}</div>
-                    <div>${card.marketPrice}</div>
-                    <div>${card.rarity}</div>
-                </div>
-            `
-                    )
-                    .join('');
-                filterCards();
-            }
+            function displayCards(cards) {
+                gallery.innerHTML = '';
+                const minPrice = parseFloat(priceFilter.value) || 0;
+                const rarity = rarityFilter.value;
 
-            function sanitizeFilename(filename) {
-                return filename.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            }
+                const filteredCards = cards.filter(card => parseFloat(card.price.replace('$', '')) >= minPrice && (rarity === 'all' || card.rarity.toLowerCase() === rarity));
 
-            function changeSet() {
-                const set = document.getElementById('set').value;
-                loadSet(set);
-            }
-
-            function filterCards() {
-                const rarity = document.getElementById('rarity').value;
-                const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
-                const cards = document.querySelectorAll('.card');
-                cards.forEach((card) => {
-                    const cardRarity = card.getAttribute('data-rarity');
-                    const cardPrice = parseFloat(card.getAttribute('data-price'));
-                    const matchesRarity = rarity === 'all' || cardRarity === rarity;
-                    const matchesPrice = cardPrice >= minPrice;
-                    if (matchesRarity && matchesPrice) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                filteredCards.forEach(card => {
+                    const img = document.createElement('img');
+                    img.src = card.imgUrl;
+                    img.alt = card.name;
+                    gallery.appendChild(img);
                 });
             }
 
-            window.onload = () => {
-                loadSet('OP01');
-            };
+            setSelector.addEventListener('change', loadSet);
+            priceFilter.addEventListener('input', () => loadSet());
+            rarityFilter.addEventListener('change', () => loadSet());
+
+            loadSet(); // Initial load
         </script>
     </body>
-</html>
+    </html>
+    

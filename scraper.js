@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
 const path = require('path');
+const fetch = require('node-fetch'); // Ensure you have node-fetch installed
 
 const sets = {
     OP01: 'https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game/price-guides/romance-dawn',
@@ -12,7 +13,8 @@ const sets = {
 
 async function downloadImage(url, filepath) {
     const response = await fetch(url);
-    const buffer = await response.buffer();
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
     await fs.writeFile(filepath, buffer);
 }
 
@@ -45,9 +47,9 @@ async function scrapeData(setCode, url) {
 
     for (const card of cards) {
         const imageName = card.name.replace(/[^a-z0-9]/g, '-') + '.jpg';
-        const imagePath = path.join(imageDir, imageName);
+        const imagePath = path.join(imageDir, imageName.toLowerCase()); // Ensure lowercase
         await downloadImage(card.imgUrl, imagePath);
-        card.imgUrl = `images/${setCode.toLowerCase()}/${imageName}`;
+        card.imgUrl = `images/${setCode.toLowerCase()}/${imageName.toLowerCase()}`; // Update image path to be lowercase
     }
 
     await fs.writeFile(path.join(__dirname, `${setCode.toLowerCase()}.json`), JSON.stringify(cards, null, 2));
