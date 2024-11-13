@@ -1,7 +1,7 @@
 [
   {
     "name": "arabesque brick fist",
-    "price": "$0.17",
+    "price": "$0.16",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/arabesque-brick-fist.jpg"
   },
@@ -13,19 +13,19 @@
   },
   {
     "name": "bartholomew kuma",
-    "price": "$0.16",
+    "price": "$0.14",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/bartholomew-kuma.jpg"
   },
   {
     "name": "bell-mere",
-    "price": "$0.14",
+    "price": "$0.16",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/bell-mere.jpg"
   },
   {
     "name": "blenheim",
-    "price": "$0.06",
+    "price": "$0.07",
     "rarity": "Common",
     "imgUrl": "images/op02/blenheim.jpg"
   },
@@ -37,43 +37,43 @@
   },
   {
     "name": "boa hancock",
-    "price": "$0.15",
+    "price": "$0.13",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/boa-hancock.jpg"
   },
   {
     "name": "boa hancock (box topper)",
-    "price": "$3.68",
+    "price": "$3.51",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/boa-hancock--box-topper-.jpg"
   },
   {
     "name": "borsalino",
-    "price": "$6.04",
+    "price": "$2.50",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/borsalino.jpg"
   },
   {
     "name": "borsalino (alternate art)",
-    "price": "$32.19",
+    "price": "$27.78",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/borsalino--alternate-art-.jpg"
   },
   {
     "name": "brook",
-    "price": "$0.16",
+    "price": "$0.12",
     "rarity": "Rare",
     "imgUrl": "images/op02/brook.jpg"
   },
   {
     "name": "buggy",
-    "price": "$0.49",
+    "price": "$0.31",
     "rarity": "Rare",
     "imgUrl": "images/op02/buggy.jpg"
   },
   {
     "name": "buggy (alternate art)",
-    "price": "$7.71",
+    "price": "$7.47",
     "rarity": "Rare",
     "imgUrl": "images/op02/buggy--alternate-art-.jpg"
   },
@@ -91,19 +91,19 @@
   },
   {
     "name": "carrot",
-    "price": "$0.63",
+    "price": "$0.71",
     "rarity": "Rare",
     "imgUrl": "images/op02/carrot.jpg"
   },
   {
     "name": "crocodile",
-    "price": "$0.09",
+    "price": "$0.08",
     "rarity": "Common",
     "imgUrl": "images/op02/crocodile.jpg"
   },
   {
     "name": "curly.dadan",
-    "price": "$0.36",
+    "price": "$0.27",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/curly-dadan.jpg"
   },
@@ -115,19 +115,19 @@
   },
   {
     "name": "don!! card (manga)",
-    "price": "$1.52",
+    "price": "$1.41",
     "rarity": "DON!!",
     "imgUrl": "images/op02/don---card--manga-.jpg"
   },
   {
     "name": "don!! card // tutorial app promo",
-    "price": "$0.06",
+    "price": "$0.04",
     "rarity": "DON!!",
     "imgUrl": "images/op02/don---card----tutorial-app-promo.jpg"
   },
   {
     "name": "daifugo",
-    "price": "$0.04",
+    "price": "$0.05",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/daifugo.jpg"
   },
@@ -139,7 +139,7 @@
   },
   {
     "name": "doberman",
-    "price": "$0.04",
+    "price": "$0.06",
     "rarity": "Common",
     "imgUrl": "images/op02/doberman.jpg"
   },
@@ -163,7 +163,7 @@
   },
   {
     "name": "donquixote doflamingo",
-    "price": "$0.13",
+    "price": "$0.15",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/donquixote-doflamingo.jpg"
   },
@@ -175,7 +175,7 @@
   },
   {
     "name": "donquixote rosinante (box topper)",
-    "price": "$1.75",
+    "price": "$1.47",
     "rarity": "Common",
     "imgUrl": "images/op02/donquixote-rosinante--box-topper-.jpg"
   },
@@ -187,55 +187,55 @@
   },
   {
     "name": "dracule mihawk",
-    "price": "$0.08",
+    "price": "$0.11",
     "rarity": "Common",
     "imgUrl": "images/op02/dracule-mihawk.jpg"
   },
   {
     "name": "edward.newgate (001)",
-    "price": "$0.23",
+    "price": "$0.21",
     "rarity": "Leader",
     "imgUrl": "images/op02/edward-newgate--001-.jpg"
   },
   {
     "name": "edward.newgate (001) (alternate art)",
-    "price": "$88.41",
+    "price": "$84.92",
     "rarity": "Leader",
     "imgUrl": "images/op02/edward-newgate--001---alternate-art-.jpg"
   },
   {
     "name": "edward.newgate (004)",
-    "price": "$4.90",
+    "price": "$1.31",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/edward-newgate--004-.jpg"
   },
   {
     "name": "edward.newgate (004) (alternate art)",
-    "price": "$34.20",
+    "price": "$31.48",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/edward-newgate--004---alternate-art-.jpg"
   },
   {
     "name": "emporio.ivankov (049)",
-    "price": "$0.18",
+    "price": "$0.19",
     "rarity": "Leader",
     "imgUrl": "images/op02/emporio-ivankov--049-.jpg"
   },
   {
     "name": "emporio.ivankov (049) (alternate art)",
-    "price": "$34.46",
+    "price": "$33.95",
     "rarity": "Leader",
     "imgUrl": "images/op02/emporio-ivankov--049---alternate-art-.jpg"
   },
   {
     "name": "emporio.ivankov (051)",
-    "price": "$0.39",
+    "price": "$0.42",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/emporio-ivankov--051-.jpg"
   },
   {
     "name": "emporio.ivankov (051) (alternate art)",
-    "price": "$5.23",
+    "price": "$4.10",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/emporio-ivankov--051---alternate-art-.jpg"
   },
@@ -247,37 +247,37 @@
   },
   {
     "name": "fullbody",
-    "price": "$0.04",
+    "price": "$0.03",
     "rarity": "Common",
     "imgUrl": "images/op02/fullbody.jpg"
   },
   {
     "name": "gecko moria",
-    "price": "$0.10",
+    "price": "$0.12",
     "rarity": "Common",
     "imgUrl": "images/op02/gecko-moria.jpg"
   },
   {
     "name": "gum-gum rain",
-    "price": "$1.09",
+    "price": "$0.94",
     "rarity": "Rare",
     "imgUrl": "images/op02/gum-gum-rain.jpg"
   },
   {
     "name": "hannyabal",
-    "price": "$0.18",
+    "price": "$0.17",
     "rarity": "Rare",
     "imgUrl": "images/op02/hannyabal.jpg"
   },
   {
     "name": "helmeppo",
-    "price": "$0.09",
+    "price": "$0.10",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/helmeppo.jpg"
   },
   {
     "name": "hina",
-    "price": "$0.26",
+    "price": "$0.30",
     "rarity": "Rare",
     "imgUrl": "images/op02/hina.jpg"
   },
@@ -289,7 +289,7 @@
   },
   {
     "name": "ice age",
-    "price": "$0.35",
+    "price": "$0.18",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/ice-age.jpg"
   },
@@ -301,7 +301,7 @@
   },
   {
     "name": "impel down all stars",
-    "price": "$0.23",
+    "price": "$0.21",
     "rarity": "Common",
     "imgUrl": "images/op02/impel-down-all-stars.jpg"
   },
@@ -313,7 +313,7 @@
   },
   {
     "name": "inuarashi",
-    "price": "$0.12",
+    "price": "$0.11",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/inuarashi.jpg"
   },
@@ -331,7 +331,7 @@
   },
   {
     "name": "jango",
-    "price": "$0.04",
+    "price": "$0.05",
     "rarity": "Common",
     "imgUrl": "images/op02/jango.jpg"
   },
@@ -343,109 +343,109 @@
   },
   {
     "name": "jozu",
-    "price": "$0.51",
+    "price": "$0.50",
     "rarity": "Rare",
     "imgUrl": "images/op02/jozu.jpg"
   },
   {
     "name": "judgment of hell",
-    "price": "$0.17",
+    "price": "$0.14",
     "rarity": "Rare",
     "imgUrl": "images/op02/judgment-of-hell.jpg"
   },
   {
     "name": "kin'emon",
-    "price": "$0.15",
+    "price": "$0.14",
     "rarity": "Leader",
     "imgUrl": "images/op02/kin-emon.jpg"
   },
   {
     "name": "kin'emon (alternate art)",
-    "price": "$23.81",
+    "price": "$24.56",
     "rarity": "Leader",
     "imgUrl": "images/op02/kin-emon--alternate-art-.jpg"
   },
   {
     "name": "kingdew",
-    "price": "$0.07",
+    "price": "$0.04",
     "rarity": "Common",
     "imgUrl": "images/op02/kingdew.jpg"
   },
   {
     "name": "koby",
-    "price": "$0.21",
+    "price": "$0.23",
     "rarity": "Rare",
     "imgUrl": "images/op02/koby.jpg"
   },
   {
     "name": "komille",
-    "price": "$0.03",
+    "price": "$0.05",
     "rarity": "Common",
     "imgUrl": "images/op02/komille.jpg"
   },
   {
     "name": "kouzuki oden",
-    "price": "$0.57",
+    "price": "$0.68",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/kouzuki-oden.jpg"
   },
   {
     "name": "kouzuki oden (alternate art)",
-    "price": "$6.29",
+    "price": "$6.30",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/kouzuki-oden--alternate-art-.jpg"
   },
   {
     "name": "kouzuki toki",
-    "price": "$0.15",
+    "price": "$0.14",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/kouzuki-toki.jpg"
   },
   {
     "name": "kouzuki toki (box topper)",
-    "price": "$1.55",
+    "price": "$1.54",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/kouzuki-toki--box-topper-.jpg"
   },
   {
     "name": "kuzan (096)",
-    "price": "$8.18",
+    "price": "$2.46",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/kuzan--096-.jpg"
   },
   {
     "name": "kuzan (096) (alternate art)",
-    "price": "$48.37",
+    "price": "$45.46",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/kuzan--096---alternate-art-.jpg"
   },
   {
     "name": "kuzan (121)",
-    "price": "$12.74",
+    "price": "$4.18",
     "rarity": "Secret Rare",
     "imgUrl": "images/op02/kuzan--121-.jpg"
   },
   {
     "name": "kuzan (121) (alternate art)",
-    "price": "$34.20",
+    "price": "$31.46",
     "rarity": "Secret Rare",
     "imgUrl": "images/op02/kuzan--121---alternate-art-.jpg"
   },
   {
     "name": "land of wano",
-    "price": "$0.04",
+    "price": "$0.05",
     "rarity": "Common",
     "imgUrl": "images/op02/land-of-wano.jpg"
   },
   {
     "name": "little sadi",
-    "price": "$0.17",
+    "price": "$0.18",
     "rarity": "Rare",
     "imgUrl": "images/op02/little-sadi.jpg"
   },
   {
     "name": "little sadi (alternate art)",
-    "price": "$8.53",
+    "price": "$8.41",
     "rarity": "Rare",
     "imgUrl": "images/op02/little-sadi--alternate-art-.jpg"
   },
@@ -457,25 +457,25 @@
   },
   {
     "name": "magellan (071)",
-    "price": "$0.19",
+    "price": "$0.16",
     "rarity": "Leader",
     "imgUrl": "images/op02/magellan--071-.jpg"
   },
   {
     "name": "magellan (071) (alternate art)",
-    "price": "$26.53",
+    "price": "$26.67",
     "rarity": "Leader",
     "imgUrl": "images/op02/magellan--071---alternate-art-.jpg"
   },
   {
     "name": "magellan (085)",
-    "price": "$13.68",
+    "price": "$11.25",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/magellan--085-.jpg"
   },
   {
     "name": "magellan (085) (alternate art)",
-    "price": "$18.96",
+    "price": "$20.84",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/magellan--085---alternate-art-.jpg"
   },
@@ -487,31 +487,31 @@
   },
   {
     "name": "makino",
-    "price": "$0.39",
+    "price": "$0.14",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/makino.jpg"
   },
   {
     "name": "marco",
-    "price": "$0.58",
+    "price": "$0.29",
     "rarity": "Rare",
     "imgUrl": "images/op02/marco.jpg"
   },
   {
     "name": "marco (alternate art)",
-    "price": "$19.14",
+    "price": "$15.46",
     "rarity": "Rare",
     "imgUrl": "images/op02/marco--alternate-art-.jpg"
   },
   {
     "name": "masked deuce",
-    "price": "$0.10",
+    "price": "$0.09",
     "rarity": "Rare",
     "imgUrl": "images/op02/masked-deuce.jpg"
   },
   {
     "name": "masked deuce (alternate art)",
-    "price": "$1.24",
+    "price": "$1.37",
     "rarity": "Rare",
     "imgUrl": "images/op02/masked-deuce--alternate-art-.jpg"
   },
@@ -523,25 +523,25 @@
   },
   {
     "name": "minokoala",
-    "price": "$0.13",
+    "price": "$0.11",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/minokoala.jpg"
   },
   {
     "name": "minokoala (box topper)",
-    "price": "$1.13",
+    "price": "$1.07",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/minokoala--box-topper-.jpg"
   },
   {
     "name": "minotaur",
-    "price": "$0.11",
+    "price": "$0.12",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/minotaur.jpg"
   },
   {
     "name": "moby dick",
-    "price": "$0.06",
+    "price": "$0.05",
     "rarity": "Common",
     "imgUrl": "images/op02/moby-dick.jpg"
   },
@@ -553,61 +553,61 @@
   },
   {
     "name": "monkey.d.garp (002)",
-    "price": "$0.16",
+    "price": "$0.17",
     "rarity": "Leader",
     "imgUrl": "images/op02/monkey-d-garp--002-.jpg"
   },
   {
     "name": "monkey.d.garp (002) (alternate art)",
-    "price": "$64.48",
+    "price": "$63.59",
     "rarity": "Leader",
     "imgUrl": "images/op02/monkey-d-garp--002---alternate-art-.jpg"
   },
   {
     "name": "monkey.d.garp (115)",
-    "price": "$0.18",
+    "price": "$0.17",
     "rarity": "Rare",
     "imgUrl": "images/op02/monkey-d-garp--115-.jpg"
   },
   {
     "name": "monkey.d.garp (115) (alternate art)",
-    "price": "$7.85",
+    "price": "$6.95",
     "rarity": "Rare",
     "imgUrl": "images/op02/monkey-d-garp--115---alternate-art-.jpg"
   },
   {
     "name": "monkey.d.luffy (041)",
-    "price": "$0.16",
+    "price": "$0.19",
     "rarity": "Rare",
     "imgUrl": "images/op02/monkey-d-luffy--041-.jpg"
   },
   {
     "name": "monkey.d.luffy (041) (alternate art)",
-    "price": "$19.36",
+    "price": "$21.19",
     "rarity": "Rare",
     "imgUrl": "images/op02/monkey-d-luffy--041---alternate-art-.jpg"
   },
   {
     "name": "monkey.d.luffy (062)",
-    "price": "$0.64",
+    "price": "$0.65",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/monkey-d-luffy--062-.jpg"
   },
   {
     "name": "monkey.d.luffy (062) (alternate art)",
-    "price": "$12.07",
+    "price": "$12.32",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/monkey-d-luffy--062---alternate-art-.jpg"
   },
   {
     "name": "morley",
-    "price": "$0.05",
+    "price": "$0.06",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/morley.jpg"
   },
   {
     "name": "mr.1 (daz.bonez)",
-    "price": "$0.36",
+    "price": "$0.35",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/mr-1--daz-bonez-.jpg"
   },
@@ -619,19 +619,19 @@
   },
   {
     "name": "mr.3 (galdino)",
-    "price": "$0.16",
+    "price": "$0.18",
     "rarity": "Rare",
     "imgUrl": "images/op02/mr-3--galdino-.jpg"
   },
   {
     "name": "nami",
-    "price": "$9.46",
+    "price": "$11.98",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/nami.jpg"
   },
   {
     "name": "nami (alternate art)",
-    "price": "$17.06",
+    "price": "$18.83",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/nami--alternate-art-.jpg"
   },
@@ -643,13 +643,13 @@
   },
   {
     "name": "new kama land",
-    "price": "$0.05",
+    "price": "$0.06",
     "rarity": "Common",
     "imgUrl": "images/op02/new-kama-land.jpg"
   },
   {
     "name": "nico robin",
-    "price": "$0.10",
+    "price": "$0.09",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/nico-robin.jpg"
   },
@@ -667,13 +667,13 @@
   },
   {
     "name": "portgas.d.ace",
-    "price": "$5.76",
+    "price": "$7.83",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/portgas-d-ace.jpg"
   },
   {
     "name": "portgas.d.ace (parallel)",
-    "price": "$36.91",
+    "price": "$36.20",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/portgas-d-ace--parallel-.jpg"
   },
@@ -691,49 +691,49 @@
   },
   {
     "name": "roronoa zoro",
-    "price": "$0.07",
+    "price": "$0.09",
     "rarity": "Common",
     "imgUrl": "images/op02/roronoa-zoro.jpg"
   },
   {
     "name": "sakazuki",
-    "price": "$0.89",
+    "price": "$0.40",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/sakazuki.jpg"
   },
   {
     "name": "sakazuki (alternate art)",
-    "price": "$8.07",
+    "price": "$7.64",
     "rarity": "Super Rare",
     "imgUrl": "images/op02/sakazuki--alternate-art-.jpg"
   },
   {
     "name": "saldeath",
-    "price": "$0.06",
+    "price": "$0.05",
     "rarity": "Common",
     "imgUrl": "images/op02/saldeath.jpg"
   },
   {
     "name": "sanji",
-    "price": "$0.17",
+    "price": "$0.19",
     "rarity": "Leader",
     "imgUrl": "images/op02/sanji.jpg"
   },
   {
     "name": "sanji (alternate art)",
-    "price": "$41.25",
+    "price": "$39.73",
     "rarity": "Leader",
     "imgUrl": "images/op02/sanji--alternate-art-.jpg"
   },
   {
     "name": "seaquake",
-    "price": "$0.64",
+    "price": "$0.71",
     "rarity": "Rare",
     "imgUrl": "images/op02/seaquake.jpg"
   },
   {
     "name": "sengoku",
-    "price": "$0.19",
+    "price": "$0.20",
     "rarity": "Rare",
     "imgUrl": "images/op02/sengoku.jpg"
   },
@@ -751,37 +751,37 @@
   },
   {
     "name": "shiryu",
-    "price": "$0.11",
+    "price": "$0.10",
     "rarity": "Rare",
     "imgUrl": "images/op02/shiryu.jpg"
   },
   {
     "name": "shishilian",
-    "price": "$0.13",
+    "price": "$0.11",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/shishilian.jpg"
   },
   {
     "name": "smoker (093)",
-    "price": "$0.20",
+    "price": "$0.22",
     "rarity": "Leader",
     "imgUrl": "images/op02/smoker--093-.jpg"
   },
   {
     "name": "smoker (093) (alternate art)",
-    "price": "$113.77",
+    "price": "$113.01",
     "rarity": "Leader",
     "imgUrl": "images/op02/smoker--093---alternate-art-.jpg"
   },
   {
     "name": "smoker (102)",
-    "price": "$0.15",
+    "price": "$0.13",
     "rarity": "Rare",
     "imgUrl": "images/op02/smoker--102-.jpg"
   },
   {
     "name": "solitaire",
-    "price": "$0.06",
+    "price": "$0.08",
     "rarity": "Common",
     "imgUrl": "images/op02/solitaire.jpg"
   },
@@ -799,7 +799,7 @@
   },
   {
     "name": "squard (box topper)",
-    "price": "$0.58",
+    "price": "$0.48",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/squard--box-topper-.jpg"
   },
@@ -811,13 +811,13 @@
   },
   {
     "name": "tashigi",
-    "price": "$0.09",
+    "price": "$0.08",
     "rarity": "Common",
     "imgUrl": "images/op02/tashigi.jpg"
   },
   {
     "name": "tashigi (box topper)",
-    "price": "$1.31",
+    "price": "$1.23",
     "rarity": "Common",
     "imgUrl": "images/op02/tashigi--box-topper-.jpg"
   },
@@ -829,43 +829,43 @@
   },
   {
     "name": "three sword style oni giri",
-    "price": "$0.08",
+    "price": "$0.07",
     "rarity": "Common",
     "imgUrl": "images/op02/three-sword-style-oni-giri.jpg"
   },
   {
     "name": "tony tony.chopper",
-    "price": "$0.15",
+    "price": "$0.13",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/tony-tony-chopper.jpg"
   },
   {
     "name": "trafalgar law",
-    "price": "$0.10",
+    "price": "$0.08",
     "rarity": "Common",
     "imgUrl": "images/op02/trafalgar-law.jpg"
   },
   {
     "name": "tsuru",
-    "price": "$0.34",
+    "price": "$0.12",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/tsuru.jpg"
   },
   {
     "name": "usopp",
-    "price": "$0.06",
+    "price": "$0.07",
     "rarity": "Common",
     "imgUrl": "images/op02/usopp.jpg"
   },
   {
     "name": "uta",
-    "price": "$2.68",
+    "price": "$2.63",
     "rarity": "Secret Rare",
     "imgUrl": "images/op02/uta.jpg"
   },
   {
     "name": "uta (alternate art)",
-    "price": "$12.40",
+    "price": "$12.19",
     "rarity": "Secret Rare",
     "imgUrl": "images/op02/uta--alternate-art-.jpg"
   },
@@ -877,43 +877,43 @@
   },
   {
     "name": "vista",
-    "price": "$0.22",
+    "price": "$0.20",
     "rarity": "Rare",
     "imgUrl": "images/op02/vista.jpg"
   },
   {
     "name": "wanda",
-    "price": "$0.09",
+    "price": "$0.06",
     "rarity": "Common",
     "imgUrl": "images/op02/wanda.jpg"
   },
   {
     "name": "whitebeard pirates",
-    "price": "$0.14",
+    "price": "$0.20",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/whitebeard-pirates.jpg"
   },
   {
     "name": "whitey bay",
-    "price": "$0.08",
+    "price": "$0.10",
     "rarity": "Uncommon",
     "imgUrl": "images/op02/whitey-bay.jpg"
   },
   {
     "name": "yamakaji",
-    "price": "$0.04",
+    "price": "$0.06",
     "rarity": "Common",
     "imgUrl": "images/op02/yamakaji.jpg"
   },
   {
     "name": "yamato",
-    "price": "$0.31",
+    "price": "$0.32",
     "rarity": "Rare",
     "imgUrl": "images/op02/yamato.jpg"
   },
   {
     "name": "yasakani sacred jewel",
-    "price": "$0.10",
+    "price": "$0.06",
     "rarity": "Common",
     "imgUrl": "images/op02/yasakani-sacred-jewel.jpg"
   },
@@ -925,13 +925,13 @@
   },
   {
     "name": "zephyr",
-    "price": "$0.14",
+    "price": "$0.16",
     "rarity": "Leader",
     "imgUrl": "images/op02/zephyr.jpg"
   },
   {
     "name": "zephyr (alternate art)",
-    "price": "$26.77",
+    "price": "$27.43",
     "rarity": "Leader",
     "imgUrl": "images/op02/zephyr--alternate-art-.jpg"
   }
